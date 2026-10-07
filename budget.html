@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Intelligence — WANDERLY</title>
+    <meta name="description" content="Know your numbers before you go. Learn how WANDERLY breaks down trip costs into realistic categories.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Playfair+Display:ital,wght@0,500..700;1,500..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="brand">
+                WANDERLY<span>.</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="discover.html" class="nav-link">Discover</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="planner.html" class="nav-link">Planner</a>
+                <a href="budget.html" class="nav-link active">Budget</a>
+                <a href="trips.html" class="nav-link">My Trips <span class="badge-count" id="navTripBadge">0</span></a>
+                <a href="guides.html" class="nav-link">Guides</a>
+            </nav>
+
+            <a href="planner.html" class="nav-cta">
+                Plan a Trip <span>↗</span>
+            </a>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="discover.html">Discover</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="planner.html">Planner</a>
+            <a href="budget.html" class="active">Budget</a>
+            <a href="trips.html">My Trips</a>
+            <a href="guides.html">Guides</a>
+            <a href="planner.html" class="nav-cta full-width">Plan a Trip ↗</a>
+        </div>
+    </header>
+
+    <!-- BUDGET HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">FINANCIAL TRANSPARENCY</span>
+            <h1>
+                Know your numbers<br>
+                <em>before you go.</em>
+            </h1>
+            <p>Understand where every rupee goes. WANDERLY splits your travel budget into transparent, realistic spending buckets.</p>
+        </div>
+    </section>
+
+    <!-- BUDGET BREAKDOWN EXPLANATION -->
+    <section class="quick-section">
+        <div class="budget-section">
+            <div class="budget-copy">
+                <span class="section-label">OUR METHODOLOGY</span>
+                <h2>The 5 Pillars of Travel Cost</h2>
+                <p>We analyze historical pricing across flights, trains, boutique stays, local markets, and experience tickets to build accurate estimates.</p>
+                
+                <div class="budget-pillars-list">
+                    <div class="pillar-item">
+                        <span class="pillar-num">01</span>
+                        <div>
+                            <h4>Transport</h4>
+                            <p>Long-distance travel (flight/rail/road) + estimated local cabs or scooter rentals.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item">
+                        <span class="pillar-num">02</span>
+                        <div>
+                            <h4>Accommodation</h4>
+                            <p>Daily room rates calculated for your chosen travel style (Budget, Balanced, Comfort, Luxury).</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item">
+                        <span class="pillar-num">03</span>
+                        <div>
+                            <h4>Food &amp; Dining</h4>
+                            <p>3 daily meals plus snacks, bottled water, and regional culinary experiences.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item">
+                        <span class="pillar-num">04</span>
+                        <div>
+                            <h4>Activities</h4>
+                            <p>Monument entry passes, national park permits, guided tours, and water sports.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item">
+                        <span class="pillar-num">05</span>
+                        <div>
+                            <h4>Emergency Buffer</h4>
+                            <p>A recommended 10% safety margin for unexpected surge fees or shopping.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISUAL CARD DEMO -->
+            <div class="budget-visual">
+                <div class="mini-card">
+                    <div class="mini-card-header">
+                        <span>EXAMPLE TRIP BUDGET</span>
+                        <strong>₹42,800</strong>
+                    </div>
+
+                    <div class="budget-bars">
+                        <div class="bar-row">
+                            <span>Stay</span>
+                            <div><i style="width: 70%;"></i></div>
+                            <strong>₹15,000</strong>
+                        </div>
+
+                        <div class="bar-row">
+                            <span>Transport</span>
+                            <div><i style="width: 52%;"></i></div>
+                            <strong>₹11,000</strong>
+                        </div>
+
+                        <div class="bar-row">
+                            <span>Food</span>
+                            <div><i style="width: 38%;"></i></div>
+                            <strong>₹8,000</strong>
+                        </div>
+
+                        <div class="bar-row">
+                            <span>Activities</span>
+                            <div><i style="width: 28%;"></i></div>
+                            <strong>₹6,000</strong>
+                        </div>
+
+                        <div class="bar-row">
+                            <span>Emergency</span>
+                            <div><i style="width: 14%;"></i></div>
+                            <strong>₹2,800</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floating-budget-card">
+                    <span>✓</span>
+                    <div>
+                        <strong>Good balance</strong>
+                        <small>₹2,800 buffer ready</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE BUDGET CALCULATOR WIDGET -->
+    <section class="quick-section bg-card-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-label">INTERACTIVE TOOL</span>
+                <h2>Quick Budget Breakdown Calculator</h2>
+            </div>
+            <p>Enter your total target budget, travel days, and group size to calculate ideal category allocations instantly.</p>
+        </div>
+
+        <div class="budget-calc-widget">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="widgetBudget">Target Trip Budget (₹)</label>
+                    <div class="money-input">
+                        <span>₹</span>
+                        <input type="number" id="widgetBudget" value="50000" min="1000" step="1000">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="widgetDays">Days</label>
+                    <input type="number" id="widgetDays" class="styled-input" value="4" min="1" max="30">
+                </div>
+
+                <div class="form-group">
+                    <label for="widgetTravellers">Travellers</label>
+                    <input type="number" id="widgetTravellers" class="styled-input" value="2" min="1" max="20">
+                </div>
+            </div>
+
+            <div class="widget-results margin-top-lg">
+                <div class="widget-metric">
+                    <small>Daily Budget Limit</small>
+                    <strong id="widgetDailyLimit">₹12,500 / day</strong>
+                </div>
+
+                <div class="widget-metric">
+                    <small>Per-Person Budget Limit</small>
+                    <strong id="widgetPerPersonLimit">₹25,000 / person</strong>
+                </div>
+            </div>
+
+            <div class="widget-allocation-grid margin-top-lg">
+                <div class="allocation-card">
+                    <span>Stay (35%)</span>
+                    <strong id="allocStay">₹17,500</strong>
+                </div>
+                <div class="allocation-card">
+                    <span>Transport (25%)</span>
+                    <strong id="allocTransport">₹12,500</strong>
+                </div>
+                <div class="allocation-card">
+                    <span>Food (20%)</span>
+                    <strong id="allocFood">₹10,000</strong>
+                </div>
+                <div class="allocation-card">
+                    <span>Activities (12%)</span>
+                    <strong id="allocActivities">₹6,000</strong>
+                </div>
+                <div class="allocation-card">
+                    <span>Buffer (8%)</span>
+                    <strong id="allocBuffer">₹4,000</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer margin-top-xl">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="brand">
+                    WANDERLY<span>.</span>
+                </a>
+                <p class="tagline">Plan less. Wander more.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="discover.html">Discover</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="planner.html">Trip Planner</a>
+                <a href="budget.html">Budget</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>WANDERLY</h4>
+                <a href="about.html">About</a>
+                <a href="guides.html">Guides</a>
+                <a href="mailto:hello@wanderly.com">Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow</h4>
+                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 WANDERLY. All rights reserved.</p>
+            <p>Made for curious travellers.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

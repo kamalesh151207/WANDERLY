@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WANDERLY — Plan Less. Wander More.</title>
+    <meta name="description" content="Discover destinations, build realistic itineraries, understand your costs and plan your next adventure without the spreadsheet headache.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Playfair+Display:ital,wght@0,500..700;1,500..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="brand">
+                WANDERLY<span>.</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="discover.html" class="nav-link">Discover</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="planner.html" class="nav-link">Planner</a>
+                <a href="budget.html" class="nav-link">Budget</a>
+                <a href="trips.html" class="nav-link">My Trips <span class="badge-count" id="navTripBadge">0</span></a>
+                <a href="guides.html" class="nav-link">Guides</a>
+            </nav>
+
+            <a href="planner.html" class="nav-cta">
+                Plan a Trip <span>↗</span>
+            </a>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="active">Home</a>
+            <a href="discover.html">Discover</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="planner.html">Planner</a>
+            <a href="budget.html">Budget</a>
+            <a href="trips.html">My Trips</a>
+            <a href="guides.html">Guides</a>
+            <a href="planner.html" class="nav-cta full-width">Plan a Trip ↗</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">
+                <span></span>
+                SMART TRAVEL PLANNING
+            </div>
+
+            <h1>
+                Go somewhere<br>
+                <em>worth remembering.</em>
+            </h1>
+
+            <p>
+                Discover destinations, build realistic itineraries, understand your costs and plan your next adventure without the spreadsheet headache.
+            </p>
+
+            <div class="hero-actions">
+                <a href="planner.html" class="primary-btn">
+                    Start planning <span>↗</span>
+                </a>
+
+                <a href="destinations.html" class="secondary-btn">
+                    Explore destinations
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>120+</strong>
+                    <span>Destinations</span>
+                </div>
+                <div>
+                    <strong>₹</strong>
+                    <span>Budget smart</span>
+                </div>
+                <div>
+                    <strong>24/7</strong>
+                    <span>Plan anytime</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-image-card">
+                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85" alt="Swiss Alps Mountain View">
+                <div class="floating-location">
+                    <span class="location-icon">⌖</span>
+                    <div>
+                        <small>Trending destination</small>
+                        <strong>Swiss Alps</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floating-note">
+                <span>✦</span>
+                <div>
+                    <strong>Best value</strong>
+                    <small>₹28,500 · 5 days</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: WHY WANDERLY -->
+    <section class="quick-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-label">WHY WANDERLY</span>
+                <h2>
+                    Discover smarter.<br>
+                    <em>Plan better. Travel happier.</em>
+                </h2>
+            </div>
+            <p>
+                We strip away hidden costs and confusing star ratings, turning your travel dreams into achievable budget plans.
+            </p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <span class="why-num">01</span>
+                <h3>Discover</h3>
+                <p>Find destinations across beach, mountains, heritage, and cities tailored directly to your personal vibe.</p>
+                <a href="discover.html" class="why-link">Explore Discovery →</a>
+            </div>
+
+            <div class="why-card">
+                <span class="why-num">02</span>
+                <h3>Plan</h3>
+                <p>Build a realistic trip with stay, food, transport, and activity cost breakdowns before booking a single ticket.</p>
+                <a href="planner.html" class="why-link">Try Trip Planner →</a>
+            </div>
+
+            <div class="why-card">
+                <span class="why-num">03</span>
+                <h3>Save</h3>
+                <p>Keep your favourite customized itineraries organized in one place and revisit them whenever you are ready to travel.</p>
+                <a href="trips.html" class="why-link">View Saved Trips →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FEATURED DESTINATIONS TEASER -->
+    <section class="destinations-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-label">CURATED SELECTION</span>
+                <h2>
+                    Places worth<br>
+                    <em>the journey.</em>
+                </h2>
+            </div>
+            <a href="destinations.html" class="text-btn">View all destinations →</a>
+        </div>
+
+        <div class="destination-grid" id="homeFeaturedGrid">
+            <!-- Rendered dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- SECTION: BUDGET TEASER -->
+    <section class="budget-section">
+        <div class="budget-copy">
+            <span class="section-label">BUDGET INTELLIGENCE</span>
+            <h2>
+                Know your numbers<br>
+                <em>before you go.</em>
+            </h2>
+            <p>
+                WANDERLY breaks your travel budget into the things that actually matter, so you know where your money goes before leaving home.
+            </p>
+            <div class="feature-list">
+                <div><span>01</span> <strong>Realistic daily cost modeling</strong></div>
+                <div><span>02</span> <strong>Transparent category splits</strong></div>
+                <div><span>03</span> <strong>Smart recommendations</strong></div>
+            </div>
+            <div style="margin-top: 28px;">
+                <a href="budget.html" class="primary-btn">Explore Budget Calculator ↗</a>
+            </div>
+        </div>
+
+        <div class="budget-visual">
+            <div class="mini-card">
+                <div class="mini-card-header">
+                    <span>TRIP BUDGET</span>
+                    <strong>₹42,800</strong>
+                </div>
+                <div class="budget-bars">
+                    <div class="bar-row">
+                        <span>Stay</span>
+                        <div><i style="width: 72%;"></i></div>
+                        <strong>₹15k</strong>
+                    </div>
+                    <div class="bar-row">
+                        <span>Transport</span>
+                        <div><i style="width: 55%;"></i></div>
+                        <strong>₹11k</strong>
+                    </div>
+                    <div class="bar-row">
+                        <span>Food</span>
+                        <div><i style="width: 38%;"></i></div>
+                        <strong>₹8k</strong>
+                    </div>
+                    <div class="bar-row">
+                        <span>Activities</span>
+                        <div><i style="width: 30%;"></i></div>
+                        <strong>₹6k</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floating-budget-card">
+                <span>✓</span>
+                <div>
+                    <strong>Good balance</strong>
+                    <small>₹7,200 remaining</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-banner">
+        <div class="cta-inner">
+            <span class="section-label">GET STARTED</span>
+            <h2>Your next trip starts here.</h2>
+            <p>Join thousands of smart travellers planning effortless, budget-friendly journeys.</p>
+            <a href="planner.html" class="primary-btn lg">Plan a Trip <span>→</span></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="brand">
+                    WANDERLY<span>.</span>
+                </a>
+                <p class="tagline">Plan less. Wander more.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="discover.html">Discover</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="planner.html">Trip Planner</a>
+                <a href="budget.html">Budget</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>WANDERLY</h4>
+                <a href="about.html">About</a>
+                <a href="guides.html">Guides</a>
+                <a href="mailto:hello@wanderly.com">Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow</h4>
+                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 WANDERLY. All rights reserved.</p>
+            <p>Made for curious travellers.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

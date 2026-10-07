@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Trip Planner — WANDERLY</title>
+    <meta name="description" content="Plan a trip that fits your life. Calculate exact trip expenses, transport, stay, meals, and fun for your budget.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Playfair+Display:ital,wght@0,500..700;1,500..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="brand">
+                WANDERLY<span>.</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="discover.html" class="nav-link">Discover</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="planner.html" class="nav-link active">Planner</a>
+                <a href="budget.html" class="nav-link">Budget</a>
+                <a href="trips.html" class="nav-link">My Trips <span class="badge-count" id="navTripBadge">0</span></a>
+                <a href="guides.html" class="nav-link">Guides</a>
+            </nav>
+
+            <a href="planner.html" class="nav-cta">
+                Plan a Trip <span>↗</span>
+            </a>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="discover.html">Discover</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="planner.html" class="active">Planner</a>
+            <a href="budget.html">Budget</a>
+            <a href="trips.html">My Trips</a>
+            <a href="guides.html">Guides</a>
+            <a href="planner.html" class="nav-cta full-width">Plan a Trip ↗</a>
+        </div>
+    </header>
+
+    <!-- PLANNER HERO & CALCULATOR -->
+    <section class="planner-section" style="padding-top: 60px;">
+        <div class="planner-intro">
+            <span class="section-label">SMART TRIP PLANNER</span>
+            <h1>
+                Plan a trip<br>
+                <em>that fits your life.</em>
+            </h1>
+            <p>
+                Configure your trip parameters below and discover realistic cost estimates split across transport, stay, meals, and activities.
+            </p>
+        </div>
+
+        <div class="planner-layout">
+            <!-- LEFT CONFIGURATION -->
+            <div class="planner-card">
+                <div class="card-header">
+                    <div>
+                        <span>01</span>
+                        <h3>Configure your trip</h3>
+                    </div>
+                    <span class="step-label">YOUR DETAILS</span>
+                </div>
+
+                <div class="form-group full">
+                    <label for="destination">Destination</label>
+                    <div class="select-wrapper">
+                        <select id="destination">
+                            <option value="any">✨ Let WANDERLY find the best match</option>
+                            <option value="goa">Goa, India</option>
+                            <option value="munnar">Munnar, India</option>
+                            <option value="jaipur">Jaipur, India</option>
+                            <option value="bali">Bali, Indonesia</option>
+                            <option value="dubai">Dubai, UAE</option>
+                            <option value="kyoto">Kyoto, Japan</option>
+                            <option value="maldives">Maldives</option>
+                            <option value="switzerland">Swiss Alps, Switzerland</option>
+                            <option value="singapore">Singapore</option>
+                            <option value="thailand">Bangkok, Thailand</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Travellers</label>
+                        <div class="stepper">
+                            <button type="button" onclick="changeValue('travellers', -1)">−</button>
+                            <input id="travellers" value="2" readonly>
+                            <button type="button" onclick="changeValue('travellers', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Travel days</label>
+                        <div class="stepper">
+                            <button type="button" onclick="changeValue('days', -1)">−</button>
+                            <input id="days" value="3" readonly>
+                            <button type="button" onclick="changeValue('days', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget">Total budget</label>
+                        <div class="money-input">
+                            <span>₹</span>
+                            <input type="number" id="budget" placeholder="50000" value="40000" min="1000" step="1000">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="travelStyle">Travel style</label>
+                        <select id="travelStyle">
+                            <option value="budget">Budget (0.78x)</option>
+                            <option value="balanced" selected>Balanced (1.0x)</option>
+                            <option value="comfort">Comfort (1.3x)</option>
+                            <option value="luxury">Luxury (1.8x)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group full">
+                    <label>What matters most?</label>
+                    <div class="interest-grid">
+                        <button type="button" class="interest active" data-interest="food" onclick="toggleInterest(this)">
+                            🍜 Food
+                        </button>
+                        <button type="button" class="interest" data-interest="nature" onclick="toggleInterest(this)">
+                            🌿 Nature
+                        </button>
+                        <button type="button" class="interest" data-interest="culture" onclick="toggleInterest(this)">
+                            🏛 Culture
+                        </button>
+                        <button type="button" class="interest" data-interest="adventure" onclick="toggleInterest(this)">
+                            🏄 Adventure
+                        </button>
+                    </div>
+                </div>
+
+                <button type="button" class="calculate-btn" onclick="calculateTrip()">
+                    Calculate my trip <span>→</span>
+                </button>
+            </div>
+
+            <!-- RIGHT RESULT -->
+            <div class="result-card" id="resultCard">
+                <div class="result-empty" id="emptyState">
+                    <div class="empty-icon">✦</div>
+                    <h3>Your journey starts here.</h3>
+                    <p>Add your trip details and we'll build a budget snapshot for you.</p>
+                    <div class="empty-hint">
+                        <span>Tip</span> A realistic budget makes better trips.
+                    </div>
+                </div>
+
+                <div class="result-content hidden" id="resultContent">
+                    <div class="result-top">
+                        <div>
+                            <span class="section-label">YOUR TRIP ESTIMATE</span>
+                            <h3 id="resultDestination">Goa, India</h3>
+                        </div>
+                        <div class="budget-status within" id="budgetStatus">Within budget</div>
+                    </div>
+
+                    <div class="total-box">
+                        <span>Estimated total</span>
+                        <strong id="totalCost">₹0</strong>
+                        <small id="perPerson">₹0 per person</small>
+                    </div>
+
+                    <div class="breakdown">
+                        <div class="breakdown-item">
+                            <div>
+                                <span class="breakdown-icon">✈</span>
+                                <span>Transport</span>
+                            </div>
+                            <strong id="transportCost">₹0</strong>
+                        </div>
+
+                        <div class="breakdown-item">
+                            <div>
+                                <span class="breakdown-icon">⌂</span>
+                                <span>Stay</span>
+                            </div>
+                            <strong id="stayCost">₹0</strong>
+                        </div>
+
+                        <div class="breakdown-item">
+                            <div>
+                                <span class="breakdown-icon">🍴</span>
+                                <span>Food</span>
+                            </div>
+                            <strong id="foodCost">₹0</strong>
+                        </div>
+
+                        <div class="breakdown-item">
+                            <div>
+                                <span class="breakdown-icon">✦</span>
+                                <span>Activities</span>
+                            </div>
+                            <strong id="activityCost">₹0</strong>
+                        </div>
+                    </div>
+
+                    <div class="budget-progress">
+                        <div class="progress-header">
+                            <span>Budget usage</span>
+                            <strong id="budgetPercentage">0%</strong>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation">
+                        <span>✦</span>
+                        <div>
+                            <strong>WANDERLY suggests</strong>
+                            <p id="recommendationText">Your trip looks good.</p>
+                        </div>
+                    </div>
+
+                    <button type="button" class="save-trip-btn" onclick="saveTrip()">
+                        Save this trip <span>♡</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOAST ALERT -->
+    <div class="toast" id="toast"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer margin-top-xl">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="brand">
+                    WANDERLY<span>.</span>
+                </a>
+                <p class="tagline">Plan less. Wander more.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="discover.html">Discover</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="planner.html">Trip Planner</a>
+                <a href="budget.html">Budget</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>WANDERLY</h4>
+                <a href="about.html">About</a>
+                <a href="guides.html">Guides</a>
+                <a href="mailto:hello@wanderly.com">Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow</h4>
+                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 WANDERLY. All rights reserved.</p>
+            <p>Made for curious travellers.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
