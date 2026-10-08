@@ -1117,10 +1117,26 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     };
 
+    window.selectQuickChip = function(destName, destId = null) {
+        const destElem = document.getElementById('landingQuickDest') || document.getElementById('quickDest');
+        if (destElem) {
+            destElem.value = destName;
+            destElem.focus();
+            destElem.style.borderColor = '#42DDF5';
+            setTimeout(() => {
+                if (destElem) destElem.style.borderColor = '';
+            }, 1200);
+        }
+    };
+
     window.executeQuickPlan = function() {
-        const destInput = document.getElementById('quickDest').value.trim().toLowerCase();
-        const budgetInput = document.getElementById('quickBudget').value;
-        const daysInput = document.getElementById('quickDays').value;
+        const destElem = document.getElementById('landingQuickDest') || document.getElementById('quickDest');
+        const budgetElem = document.getElementById('landingQuickBudget') || document.getElementById('quickBudget');
+        const daysElem = document.getElementById('landingQuickDays') || document.getElementById('quickDays');
+
+        const destInput = (destElem ? destElem.value : '').trim().toLowerCase();
+        const budgetInput = budgetElem ? budgetElem.value : 50000;
+        const daysInput = daysElem ? daysElem.value : 5;
 
         if (destInput) {
             const match = DESTINATIONS.find(d => d.name.toLowerCase().includes(destInput) || d.country.toLowerCase().includes(destInput));
@@ -1131,8 +1147,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         navigateTo('planner');
-        if (budgetInput) document.getElementById('plannerBudget').value = budgetInput;
-        if (daysInput) document.getElementById('plannerDays').value = daysInput;
+        const pBudget = document.getElementById('plannerBudget');
+        const pDays = document.getElementById('plannerDays');
+        if (pBudget && budgetInput) pBudget.value = budgetInput;
+        if (pDays && daysInput) pDays.value = daysInput;
         calculateTrip(false);
     };
 

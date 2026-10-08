@@ -91,77 +91,96 @@
         <section id="page-landing" class="page active">
             <!-- CINEMATIC LANDING HERO -->
             <div class="hero">
-                <div class="container hero-container">
-                    <div class="hero-content">
-                        <span class="hero-eyebrow-pill">✦ NEXT-GEN TRAVEL OPERATING SYSTEM</span>
+                <div class="container">
+                    <!-- HERO TOP SPLIT GRID -->
+                    <div class="hero-top-grid">
+                        <div class="hero-text-col">
+                            <span class="hero-eyebrow-pill">✦ NEXT-GEN TRAVEL OPERATING SYSTEM</span>
 
-                        <h1 class="hero-headline">
-                            GO SOMEWHERE<br>
-                            <span class="highlight-gradient">WORTH REMEMBERING.</span>
-                        </h1>
+                            <h1 class="hero-headline">
+                                GO SOMEWHERE<br>
+                                <span class="highlight-gradient">WORTH REMEMBERING.</span>
+                            </h1>
 
-                        <p class="hero-subtext">
-                            Discover destinations, build your itinerary and understand your trip budget before you go.
-                        </p>
+                            <p class="hero-subtext">
+                                Discover destinations, build your itinerary and understand your trip budget before you go.
+                            </p>
 
-                        <div class="hero-actions">
-                            <button type="button" class="primary-btn lg" onclick="requireAuthNav('planner')">
-                                START PLANNING →
-                            </button>
+                            <div class="hero-actions">
+                                <button type="button" class="primary-btn lg" onclick="requireAuthNav('planner')">
+                                    START PLANNING →
+                                </button>
 
-                            <button type="button" class="outline-btn lg" onclick="navigateTo('destinations')">
-                                EXPLORE DESTINATIONS
-                            </button>
-                        </div>
-
-                        <!-- FLOATING GLASS TRAVEL PLANNER -->
-                        <div class="hero-search-strip margin-top-md">
-                            <div class="hero-search-inner">
-                                <div class="search-field">
-                                    <span class="field-icon">⌖</span>
-                                    <div>
-                                        <label for="landingQuickDest">WHERE TO?</label>
-                                        <input type="text" id="landingQuickDest" placeholder="e.g. Kyoto, Bali, Munnar..." autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="search-field">
-                                    <span class="field-icon">◷</span>
-                                    <div>
-                                        <label for="landingQuickDays">DAYS</label>
-                                        <input type="number" id="landingQuickDays" value="5">
-                                    </div>
-                                </div>
-                                <div class="search-field">
-                                    <span class="field-icon">₹</span>
-                                    <div>
-                                        <label for="landingQuickBudget">BUDGET</label>
-                                        <input type="number" id="landingQuickBudget" value="50000">
-                                    </div>
-                                </div>
-                                <button type="button" class="primary-btn" onclick="executeQuickPlan()">
-                                    BUILD MY TRIP →
+                                <button type="button" class="outline-btn lg" onclick="navigateTo('destinations')">
+                                    EXPLORE DESTINATIONS
                                 </button>
                             </div>
+                        </div>
 
-                            <div class="hero-trending-tags">
-                                <span>TRENDING:</span>
-                                <button type="button" class="tag-pill" onclick="planDestination('kyoto')">Kyoto</button>
-                                <button type="button" class="tag-pill" onclick="planDestination('bali')">Bali</button>
-                                <button type="button" class="tag-pill" onclick="planDestination('munnar')">Munnar</button>
-                                <button type="button" class="tag-pill" onclick="planDestination('dubai')">Dubai</button>
-                                <button type="button" class="tag-pill" onclick="planDestination('switzerland')">Swiss Alps</button>
+                        <!-- CINEMATIC DESTINATION VISUAL -->
+                        <div class="hero-visual-col">
+                            <div class="hero-main-card">
+                                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85" alt="Cinematic Mountain & Lake Landscape">
+                                <div class="hero-image-pill-label">
+                                    <span class="pill-dot"></span>
+                                    <strong>KYOTO · JAPAN</strong>
+                                    <small>94% MATCH</small>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CINEMATIC DESTINATION VISUAL -->
-                    <div class="hero-visual-wrapper">
-                        <div class="hero-main-card">
-                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85" alt="Cinematic Mountain & Lake Landscape">
-                            <div class="hero-image-pill-label">
-                                <span class="pill-dot"></span>
-                                <strong>KYOTO · JAPAN</strong>
-                                <small>94% MATCH</small>
+                    <!-- REFINED QUICK TRIP PLANNER MODULE -->
+                    <div class="quick-planner-module">
+                        <div class="planner-module-header">
+                            <div>
+                                <span class="module-accent-tag">QUICK TRIP PLANNER</span>
+                                <h2>PLAN YOUR NEXT ESCAPE</h2>
+                            </div>
+                            <p class="module-subtitle">Tell us where you're going, how long you're staying, and what you want to spend.</p>
+                        </div>
+
+                        <form class="planner-form-bar" onsubmit="event.preventDefault(); executeQuickPlan();">
+                            <div class="planner-field field-dest">
+                                <label for="landingQuickDest">DESTINATION</label>
+                                <div class="input-with-icon">
+                                    <span class="field-icon">📍</span>
+                                    <input type="text" id="landingQuickDest" placeholder="Kyoto, Bali, Munnar..." autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="planner-field field-duration">
+                                <label for="landingQuickDays">DURATION</label>
+                                <div class="input-with-icon">
+                                    <span class="field-icon">🕒</span>
+                                    <input type="number" id="landingQuickDays" value="5" min="1" max="30">
+                                </div>
+                            </div>
+
+                            <div class="planner-field field-budget">
+                                <label for="landingQuickBudget">BUDGET</label>
+                                <div class="input-with-icon">
+                                    <span class="field-icon">₹</span>
+                                    <input type="number" id="landingQuickBudget" value="50000" step="1000">
+                                </div>
+                            </div>
+
+                            <div class="planner-field field-btn">
+                                <button type="submit" class="planner-submit-btn" id="quickPlanSubmitBtn">
+                                    <span>BUILD TRIP</span>
+                                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="planner-popular-strip">
+                            <span class="popular-label">POPULAR</span>
+                            <div class="chip-group">
+                                <button type="button" class="popular-chip" onclick="selectQuickChip('Kyoto', 'kyoto')">Kyoto</button>
+                                <button type="button" class="popular-chip" onclick="selectQuickChip('Bali', 'bali')">Bali</button>
+                                <button type="button" class="popular-chip" onclick="selectQuickChip('Munnar', 'munnar')">Munnar</button>
+                                <button type="button" class="popular-chip" onclick="selectQuickChip('Dubai', 'dubai')">Dubai</button>
+                                <button type="button" class="popular-chip" onclick="selectQuickChip('Swiss Alps', 'switzerland')">Swiss Alps</button>
                             </div>
                         </div>
                     </div>

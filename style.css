@@ -373,12 +373,12 @@ img {
    PUBLIC LANDING PAGE (#page-landing)
 ========================================================= */
 .hero {
-    padding: 80px 0 60px;
+    padding: 72px 0 60px;
 }
 
-.hero-container {
+.hero-top-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 48px;
     align-items: center;
 }
@@ -421,48 +421,203 @@ img {
     align-items: center;
 }
 
-.hero-search-strip {
-    background: rgba(16, 43, 61, 0.85);
-    backdrop-filter: blur(16px);
-    border: 1px solid var(--border-glow);
-    border-radius: var(--radius-lg);
-    padding: 18px;
-    box-shadow: var(--shadow-card);
+/* REFINED QUICK TRIP PLANNER MODULE */
+.quick-planner-module {
+    margin-top: 52px;
+    background: #0D2233;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 32px 36px;
+    box-shadow: 0 24px 64px rgba(7, 19, 31, 0.4);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.hero-search-inner {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.3fr;
-    gap: 12px;
+.planner-module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 22px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.planner-module-header .module-accent-tag {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #42DDF5;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.planner-module-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.planner-module-header .module-subtitle {
+    font-size: 14px;
+    color: #A0B3C6;
+    margin: 0;
+    max-width: 520px;
+}
+
+/* FORM BAR HORIZONTAL ALIGNMENT */
+.planner-form-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.planner-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.planner-field.field-dest { flex: 2.2; }
+.planner-field.field-duration { flex: 1.2; }
+.planner-field.field-budget { flex: 1.2; }
+.planner-field.field-btn { flex: 1.4; }
+
+.planner-field label {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #8FA6B8;
+    text-transform: uppercase;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
     align-items: center;
 }
 
-.hero-trending-tags {
+.input-with-icon .field-icon {
+    position: absolute;
+    left: 14px;
+    font-size: 14px;
+    color: #42DDF5;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.input-with-icon input {
+    width: 100%;
+    height: 52px;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 0 16px 0 38px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: #07131F;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.input-with-icon input::placeholder {
+    color: #94A3B8;
+    font-weight: 400;
+}
+
+.input-with-icon input:focus {
+    border-color: #42DDF5;
+    box-shadow: 0 0 0 4px rgba(66, 221, 245, 0.2);
+    background: #FFFFFF;
+}
+
+/* SUBMIT BUTTON STYLING */
+.planner-submit-btn {
+    width: 100%;
+    height: 52px;
+    background: #42DDF5;
+    color: #07131F;
+    border: none;
+    border-radius: 14px;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(66, 221, 245, 0.25);
+}
+
+.planner-submit-btn:hover {
+    transform: translateY(-2px);
+    background: #5EE5FA;
+    box-shadow: 0 8px 24px rgba(66, 221, 245, 0.35);
+}
+
+.planner-submit-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+.btn-arrow {
+    transition: transform 0.2s ease;
+}
+
+/* POPULAR DESTINATIONS STRIP */
+.planner-popular-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.popular-label {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #42DDF5;
+    text-transform: uppercase;
+}
+
+.chip-group {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-top: 14px;
-
-    span {
-        font-size: 11px;
-        color: var(--text-muted);
-        font-weight: 700;
-        font-family: var(--font-heading);
-    }
+    flex-wrap: wrap;
 }
 
-.tag-pill {
-    background: var(--bg-input);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-white);
-    padding: 4px 12px;
-    border-radius: var(--radius-full);
-    font-size: 12px;
+.popular-chip {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #E2E8F0;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
 
-    &:hover {
-        border-color: var(--accent-cyan);
-        color: var(--accent-cyan);
-    }
+.popular-chip:hover {
+    background: rgba(66, 221, 245, 0.12);
+    border-color: #42DDF5;
+    color: #42DDF5;
+    transform: translateY(-1px);
 }
 
 .hero-visual-wrapper {
@@ -1632,9 +1787,12 @@ img {
 
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1024px) {
-    .hero-container { grid-template-columns: 1fr; }
-    .hero-search-inner { grid-template-columns: 1fr 1fr; }
-    .hero-visual-wrapper { margin-top: 20px; }
+    .hero-top-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero-visual-col .hero-main-card { height: 340px; }
+    .quick-planner-module { padding: 28px 24px; margin-top: 36px; }
+    .planner-form-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .planner-field.field-dest { grid-column: span 2; }
+    .planner-field.field-btn { grid-column: span 2; }
     .journey-timeline-steps { flex-direction: column; }
     .step-connector { width: 2px; height: 20px; align-self: flex-start; margin-left: 24px; }
     .trust-strip { grid-template-columns: repeat(2, 1fr); }
@@ -1649,11 +1807,15 @@ img {
     .desktop-nav { display: none; }
     .mobile-menu-btn { display: block; }
     .hero-headline { font-size: clamp(2.8rem, 10vw, 3.8rem); }
-    .hero-search-inner { grid-template-columns: 1fr; }
+    .quick-planner-module { padding: 20px 16px; margin-top: 28px; border-radius: 18px; }
+    .planner-module-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .planner-form-bar { grid-template-columns: 1fr; gap: 12px; }
+    .planner-field.field-dest { grid-column: span 1; }
+    .planner-field.field-btn { grid-column: span 1; }
+    .hero-main-card { height: 260px; border-radius: 20px; }
     .features-grid, .featured-grid, .directory-grid, .guides-grid, .saved-trips-grid { grid-template-columns: 1fr; }
     .trust-strip { grid-template-columns: 1fr; }
     .planner-form-grid, .add-expense-card { grid-template-columns: 1fr; }
     .cost-breakdown-grid { grid-template-columns: 1fr 1fr; }
-    .hero-main-card { height: 280px; border-radius: 20px; }
     .quick-section { padding: 64px 0; }
 }
