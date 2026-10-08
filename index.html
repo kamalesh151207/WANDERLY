@@ -95,315 +95,304 @@
                     <div class="hero-content">
                         <span class="hero-eyebrow-pill">✦ NEXT-GEN TRAVEL OPERATING SYSTEM</span>
 
-                        <h1>
+                        <h1 class="hero-headline">
                             GO SOMEWHERE<br>
                             <span class="highlight-gradient">WORTH REMEMBERING.</span>
                         </h1>
 
-                        <p>
-                            Discover curated destinations, build realistic day-by-day itineraries, and master your trip finances before you leave.
+                        <p class="hero-subtext">
+                            Discover destinations, build your itinerary and understand your trip budget before you go.
                         </p>
 
                         <div class="hero-actions">
                             <button type="button" class="primary-btn lg" onclick="requireAuthNav('planner')">
-                                START PLANNING NOW ↗
+                                START PLANNING →
                             </button>
 
-                            <button type="button" class="secondary-btn" onclick="navigateTo('destinations')">
+                            <button type="button" class="outline-btn lg" onclick="navigateTo('destinations')">
                                 EXPLORE DESTINATIONS
                             </button>
                         </div>
 
-                        <!-- HERO SEARCH BAR -->
+                        <!-- FLOATING GLASS TRAVEL PLANNER -->
                         <div class="hero-search-strip margin-top-md">
                             <div class="hero-search-inner">
                                 <div class="search-field">
                                     <span class="field-icon">⌖</span>
                                     <div>
-                                        <label for="landingQuickDest">Where to?</label>
-                                        <input type="text" id="landingQuickDest" placeholder="e.g. Kyoto, Bali, Swiss Alps..." autocomplete="off">
+                                        <label for="landingQuickDest">WHERE TO?</label>
+                                        <input type="text" id="landingQuickDest" placeholder="e.g. Kyoto, Bali, Munnar..." autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="search-field">
                                     <span class="field-icon">◷</span>
                                     <div>
-                                        <label for="landingQuickDays">Days</label>
+                                        <label for="landingQuickDays">DAYS</label>
                                         <input type="number" id="landingQuickDays" value="5">
                                     </div>
                                 </div>
                                 <div class="search-field">
                                     <span class="field-icon">₹</span>
                                     <div>
-                                        <label for="landingQuickBudget">Budget</label>
+                                        <label for="landingQuickBudget">BUDGET</label>
                                         <input type="number" id="landingQuickBudget" value="50000">
                                     </div>
                                 </div>
                                 <button type="button" class="primary-btn" onclick="executeQuickPlan()">
-                                    Build Trip →
+                                    BUILD MY TRIP →
                                 </button>
                             </div>
 
                             <div class="hero-trending-tags">
                                 <span>TRENDING:</span>
-                                <button type="button" class="tag-pill" onclick="planDestination('kyoto')">⛩ Kyoto</button>
-                                <button type="button" class="tag-pill" onclick="planDestination('bali')">🏖 Bali</button>
-                                <button type="button" class="tag-pill" onclick="planDestination('munnar')">🌿 Munnar</button>
-                                <button type="button" class="tag-pill" onclick="planDestination('dubai')">🏙 Dubai</button>
-                                <button type="button" class="tag-pill" onclick="planDestination('switzerland')">⛷ Swiss Alps</button>
+                                <button type="button" class="tag-pill" onclick="planDestination('kyoto')">Kyoto</button>
+                                <button type="button" class="tag-pill" onclick="planDestination('bali')">Bali</button>
+                                <button type="button" class="tag-pill" onclick="planDestination('munnar')">Munnar</button>
+                                <button type="button" class="tag-pill" onclick="planDestination('dubai')">Dubai</button>
+                                <button type="button" class="tag-pill" onclick="planDestination('switzerland')">Swiss Alps</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- FLOATING LAYERED VISUAL DECK -->
+                    <!-- CINEMATIC DESTINATION VISUAL DECK -->
                     <div class="hero-visual-wrapper">
                         <div class="hero-main-card">
-                            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85" alt="Alpine Mountain Panorama">
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85" alt="Cinematic Mountain & Lake Landscape">
+                            <div class="hero-img-overlay">
+                                <span class="country-tag">SWITZERLAND · ALPINE ADVENTURE</span>
+                                <strong style="font-family:var(--font-heading); font-size:18px; display:block; color:#FFF;">Lake Lucerne & Peak Trails</strong>
+                            </div>
                         </div>
 
-                        <!-- FLOATING CARD 1: KYOTO -->
+                        <!-- TRANSLUCENT FLOATING CARDS -->
                         <div class="floating-card card-1" onclick="openDestModal('kyoto')">
                             <div class="icon-badge"><span class="ping-dot"></span>✦</div>
                             <div>
                                 <small>DESTINATION MATCH</small>
-                                <strong>KYOTO, Japan</strong>
+                                <strong>KYOTO, JAPAN</strong>
                                 <span>94% MATCH · ₹42,800 EST.</span>
                             </div>
                         </div>
 
-                        <!-- FLOATING CARD 2: READINESS -->
                         <div class="floating-card card-2">
                             <div class="icon-badge orange">85%</div>
                             <div>
                                 <small style="color:var(--accent-orange)">TRIP READINESS</small>
-                                <strong>Optimal Preparation</strong>
+                                <strong>4/5 Complete</strong>
                                 <span>✓ Stay ✓ Budget ○ Packing</span>
                             </div>
                         </div>
 
-                        <!-- FLOATING CARD 3: LIVE BUDGET -->
                         <div class="floating-card card-3">
                             <div class="icon-badge gold">₹</div>
                             <div>
                                 <small style="color:var(--accent-gold)">BUDGET HEALTH</small>
-                                <strong>✓ Healthy Margin</strong>
-                                <span>+₹7,200 remaining safety</span>
+                                <strong>₹7,200 Remaining</strong>
+                                <span>✓ Healthy Safety Margin</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TRUST STRIP -->
-            <div class="container margin-top-md">
-                <div class="trust-strip">
-                    <div class="trust-item"><span>⌖ DISCOVER</span><small>Find curated places</small></div>
-                    <div class="trust-item"><span>📅 PLAN</span><small>Day-by-day itineraries</small></div>
-                    <div class="trust-item"><span>₹ BUDGET</span><small>Real spending estimates</small></div>
-                    <div class="trust-item"><span>✓ PREPARE</span><small>Checklist & readiness</small></div>
-                </div>
-            </div>
-
-            <!-- INTERACTIVE MOOD STRIP SECTION -->
-            <div class="quick-section">
+            <!-- SECTION 1: YOUR ENTIRE JOURNEY. ONE PLACE. -->
+            <div class="quick-section bg-surface-dark">
                 <div class="container">
                     <div class="section-heading text-center">
-                        <span class="section-label">INTERACTIVE MOOD DISCOVERY</span>
-                        <h2>WHAT'S YOUR TRAVEL MOOD TODAY?</h2>
-                        <p style="color:var(--text-muted); font-size:14px; max-width:560px; margin:6px auto 0;">Select your vibe and let WANDERLY recommend destinations that match your energy.</p>
+                        <span class="section-label">THE WANDERLY SYSTEM</span>
+                        <h2>YOUR ENTIRE JOURNEY. ONE PLACE.</h2>
+                        <p style="color:var(--text-muted); font-size:14px; max-width:560px; margin:6px auto 0;">From the first destination idea to the final packing checklist.</p>
                     </div>
 
-                    <div class="mood-chips-row" style="justify-content:center; margin-top:24px;">
-                        <button type="button" class="mood-pill active" onclick="selectTravelMood('beach', this)">🏖 Beach Escape</button>
-                        <button type="button" class="mood-pill" onclick="selectTravelMood('mountain', this)">🏔 Mountain Reset</button>
-                        <button type="button" class="mood-pill" onclick="selectTravelMood('city', this)">🏙 City Pulse</button>
-                        <button type="button" class="mood-pill" onclick="selectTravelMood('food', this)">🍜 Culinary Trail</button>
-                        <button type="button" class="mood-pill" onclick="selectTravelMood('nature', this)">🌿 Eco Nature</button>
-                    </div>
-
-                    <div id="moodRecommendations"></div>
-                </div>
-            </div>
-
-            <!-- HIGH-IMPACT FEATURES GRID -->
-            <div class="quick-section bg-card-section" id="landing-features">
-                <div class="container">
-                    <div class="section-heading text-center">
-                        <span class="section-label">EVERYTHING YOU NEED FOR THE JOURNEY</span>
-                        <h2>BUILT FOR MODERN EXPLORERS</h2>
-                    </div>
-
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <span class="feat-icon">⌖</span>
-                            <small class="country-tag">01 DISCOVERY</small>
-                            <h3>SMART DISCOVERY</h3>
-                            <p>Find places that actually fit your budget, duration, interests, and preferred travel style.</p>
+                    <div class="journey-timeline-steps">
+                        <div class="step-node">
+                            <span class="node-num">01</span>
+                            <h3>DISCOVER</h3>
+                            <p>Find destinations matching your budget & travel mood.</p>
                         </div>
-                        <div class="feature-card">
-                            <span class="feat-icon">📅</span>
-                            <small class="country-tag">02 PLANNER</small>
-                            <h3>TRIP PLANNER</h3>
-                            <p>Build personalized day-by-day activity timelines complete with realistic daily pacing.</p>
+                        <div class="step-connector"></div>
+                        <div class="step-node">
+                            <span class="node-num">02</span>
+                            <h3>PLAN</h3>
+                            <p>Build personalized day-by-day activity timelines.</p>
                         </div>
-                        <div class="feature-card">
-                            <span class="feat-icon">₹</span>
-                            <small class="country-tag">03 BUDGET</small>
-                            <h3>SMART BUDGET</h3>
-                            <p>Estimate accommodation, transport, food, and activity costs before you spend a dime.</p>
+                        <div class="step-connector"></div>
+                        <div class="step-node">
+                            <span class="node-num">03</span>
+                            <h3>OPTIMIZE</h3>
+                            <p>Adjust costs with instant budget optimizer tips.</p>
                         </div>
-                        <div class="feature-card">
-                            <span class="feat-icon">✦</span>
-                            <small class="country-tag">04 MATCHING</small>
-                            <h3>DESTINATION MATCH</h3>
-                            <p>Compare destination scores side-by-side against your personal travel preferences.</p>
-                        </div>
-                        <div class="feature-card">
-                            <span class="feat-icon">✈</span>
-                            <small class="country-tag">05 DASHBOARD</small>
-                            <h3>MY TRIPS</h3>
-                            <p>Keep your planned, upcoming, and past journeys organized in one seamless command center.</p>
-                        </div>
-                        <div class="feature-card">
-                            <span class="feat-icon">📖</span>
-                            <small class="country-tag">06 KNOWLEDGE</small>
-                            <h3>TRAVEL GUIDES</h3>
-                            <p>Access curated field guides, currency secrets, and regional culinary advice.</p>
+                        <div class="step-connector"></div>
+                        <div class="step-node">
+                            <span class="node-num">04</span>
+                            <h3>PREPARE</h3>
+                            <p>Organize checklists, packing items, & readiness scores.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SHOWCASE SECTION 1: DISCOVER YOUR NEXT PLACE -->
+            <!-- SECTION 2: TRAVEL PLANNING, WITHOUT THE CHAOS -->
             <div class="quick-section">
                 <div class="container">
                     <div class="showcase-card">
                         <div class="showcase-content">
-                            <span class="section-label">01 SMART DISCOVERY</span>
-                            <h2>DISCOVER YOUR NEXT PLACE.</h2>
+                            <span class="section-label">02 TRIP PLANNER SHOWCASE</span>
+                            <h2>TRAVEL PLANNING, WITHOUT THE CHAOS.</h2>
                             <p style="color:var(--text-muted); font-size:15px; margin:12px 0 24px; line-height:1.7;">
-                                Find destination recommendations that match your exact parameters. Filter by budget range, travel duration, season, and travel style with live match scoring.
+                                Configure travellers, dates, and budget to generate a realistic day-by-day itinerary complete with daily activity time-stamps and route maps.
                             </p>
 
-                            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:28px;">
-                                <div style="display:flex; gap:10px; align-items:center;">
-                                    <span style="color:var(--accent-cyan);">✓</span>
-                                    <span style="font-size:13px; color:var(--text-white);">Filter by 22+ curated global destinations</span>
+                            <div class="mockup-itinerary-box margin-bottom-md">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid var(--border-subtle); padding-bottom:8px;">
+                                    <strong style="font-family:var(--font-heading); color:var(--accent-cyan); font-size:15px;">KYOTO · 5 DAYS · 2 TRAVELLERS</strong>
+                                    <span class="match-badge">94% MATCH</span>
                                 </div>
-                                <div style="display:flex; gap:10px; align-items:center;">
-                                    <span style="color:var(--accent-cyan);">✓</span>
-                                    <span style="font-size:13px; color:var(--text-white);">Live match percentage based on your budget & style</span>
+                                <div class="mockup-day">
+                                    <small style="color:var(--accent-orange); font-weight:700;">DAY 01</small>
+                                    <span style="color:var(--text-white); font-size:13px; font-weight:600;">Gion District Walk & Kaiseki Dinner</span>
                                 </div>
-                                <div style="display:flex; gap:10px; align-items:center;">
-                                    <span style="color:var(--accent-cyan);">✓</span>
-                                    <span style="font-size:13px; color:var(--text-white);">Side-by-side destination metric comparison matrix</span>
+                                <div class="mockup-day">
+                                    <small style="color:var(--accent-orange); font-weight:700;">DAY 02</small>
+                                    <span style="color:var(--text-white); font-size:13px; font-weight:600;">Arashiyama Bamboo Grove & Tenryu-ji Temple</span>
                                 </div>
                             </div>
 
-                            <button type="button" class="primary-btn" onclick="navigateTo('discover')">EXPLORE DISCOVER WORKSPACE →</button>
+                            <button type="button" class="primary-btn" onclick="requireAuthNav('planner')">START PLANNING THIS TRIP →</button>
                         </div>
 
                         <div class="showcase-visual">
-                            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80" alt="Bali Rice Terraces">
+                            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Kyoto Shrine Bamboo">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SHOWCASE SECTION 2: PLAN THE JOURNEY -->
-            <div class="quick-section bg-card-section">
-                <div class="container">
-                    <div class="showcase-card reverse">
-                        <div class="showcase-visual">
-                            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Kyoto Shrine">
-                        </div>
-
-                        <div class="showcase-content">
-                            <span class="section-label">02 TRIP PLANNER</span>
-                            <h2>PLAN THE JOURNEY.</h2>
-                            <p style="color:var(--text-muted); font-size:15px; margin:12px 0 24px; line-height:1.7;">
-                                Build realistic day-by-day itineraries with time-stamped activity timelines. Add, edit, or adjust activities to match your energy level.
-                            </p>
-
-                            <div style="background:var(--bg-midnight); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); margin-bottom:24px;">
-                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                                    <strong style="font-family:var(--font-heading); color:var(--accent-cyan); font-size:14px;">DAY 01 · KYOTO</strong>
-                                    <small style="color:var(--accent-gold); font-weight:700;">SAMPLE TIMELINE</small>
-                                </div>
-                                <div style="font-size:12px; color:var(--text-muted); display:flex; flex-direction:column; gap:6px;">
-                                    <div><span style="color:var(--text-white); font-weight:600;">09:00 AM</span> — Arrival & Ryokan Check-in</div>
-                                    <div><span style="color:var(--text-white); font-weight:600;">01:00 PM</span> — Authentic Tonkotsu Ramen Lunch</div>
-                                    <div><span style="color:var(--text-white); font-weight:600;">04:30 PM</span> — Fushimi Inari Torii Gate Sunset Hike</div>
-                                </div>
-                            </div>
-
-                            <button type="button" class="primary-btn" onclick="requireAuthNav('planner')">TRY THE MULTI-STEP PLANNER →</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HOW IT WORKS TIMELINE -->
-            <div class="quick-section">
-                <div class="container">
-                    <div class="section-heading text-center">
-                        <span class="section-label">HOW WANDERLY WORKS</span>
-                        <h2>FIVE STEPS TO YOUR NEXT ADVENTURE</h2>
-                    </div>
-
-                    <div class="process-grid">
-                        <div class="process-card">
-                            <span class="process-num">01</span>
-                            <h3>DISCOVER</h3>
-                            <p>Find the right destination for your mood & budget.</p>
-                        </div>
-                        <div class="process-card">
-                            <span class="process-num">02</span>
-                            <h3>PLAN</h3>
-                            <p>Build your day-by-day activity itinerary.</p>
-                        </div>
-                        <div class="process-card">
-                            <span class="process-num">03</span>
-                            <h3>OPTIMIZE</h3>
-                            <p>Adjust costs with smart budget suggestions.</p>
-                        </div>
-                        <div class="process-card">
-                            <span class="process-num">04</span>
-                            <h3>PREPARE</h3>
-                            <p>Organize checklists and packing lists.</p>
-                        </div>
-                        <div class="process-card">
-                            <span class="process-num">05</span>
-                            <h3>WANDER</h3>
-                            <p>Enjoy your trip with organized offline data.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DESTINATION PREVIEW GRID -->
-            <div class="quick-section bg-card-section">
+            <!-- SECTION 3: FIND SOMEWHERE YOU'LL LOVE -->
+            <div class="quick-section bg-surface-dark">
                 <div class="container">
                     <div class="section-heading">
                         <div>
-                            <span class="section-label">FEATURED DESTINATIONS</span>
-                            <h2>WHERE WILL YOU GO NEXT?</h2>
+                            <span class="section-label">EDITORIAL DESTINATION EXPLORER</span>
+                            <h2>FIND SOMEWHERE YOU'LL LOVE.</h2>
                         </div>
                         <button type="button" class="text-btn" onclick="navigateTo('destinations')">View all places →</button>
                     </div>
 
                     <div class="featured-grid" id="landingPreviewGrid">
-                        <!-- JS populated preview cards -->
+                        <!-- JS populated editorial cards -->
                     </div>
                 </div>
             </div>
 
-            <!-- BOTTOM HIGH-CONVERTING CTA BANNER -->
+            <!-- SECTION 4: KNOW YOUR TRIP BEFORE YOU BOOK IT -->
             <div class="quick-section">
+                <div class="container">
+                    <div class="showcase-card reverse">
+                        <div class="showcase-visual">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Financial Dashboard Concept">
+                        </div>
+
+                        <div class="showcase-content">
+                            <span class="section-label">03 SMART FINANCIAL DASHBOARD</span>
+                            <h2>KNOW YOUR TRIP BEFORE YOU BOOK IT.</h2>
+                            <p style="color:var(--text-muted); font-size:15px; margin:12px 0 24px; line-height:1.7;">
+                                Understand realistic costs for accommodation, transport, food, and activities. Track your spending margin live and optimize costs with one click.
+                            </p>
+
+                            <div style="background:var(--bg-midnight); padding:20px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); margin-bottom:24px;">
+                                <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                                    <div><small style="color:var(--text-muted); font-size:10px;">TOTAL BUDGET</small><strong style="display:block; color:var(--text-white); font-family:var(--font-heading); font-size:18px;">₹50,000</strong></div>
+                                    <div><small style="color:var(--text-muted); font-size:10px;">ESTIMATED</small><strong style="display:block; color:var(--accent-cyan); font-family:var(--font-heading); font-size:18px;">₹42,800</strong></div>
+                                    <div><small style="color:var(--text-muted); font-size:10px;">REMAINING</small><strong style="display:block; color:var(--accent-gold); font-family:var(--font-heading); font-size:18px;">₹7,200</strong></div>
+                                </div>
+                                <div class="budget-bar-track" style="margin-bottom:8px;">
+                                    <div style="width:35%; background:var(--accent-cyan);"></div>
+                                    <div style="width:25%; background:var(--accent-orange);"></div>
+                                    <div style="width:20%; background:var(--accent-gold);"></div>
+                                    <div style="width:12%; background:#A259FF;"></div>
+                                    <div style="width:8%; background:#4ADE80;"></div>
+                                </div>
+                                <small style="color:var(--text-muted); font-size:11px;">Stay 35% · Transport 25% · Food 20% · Activities 12% · Buffer 8%</small>
+                            </div>
+
+                            <button type="button" class="primary-btn" onclick="requireAuthNav('budget')">EXPLORE FINANCIAL DASHBOARD →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: READY WHEN YOU ARE -->
+            <div class="quick-section bg-surface-dark">
+                <div class="container">
+                    <div class="showcase-card">
+                        <div class="showcase-content">
+                            <span class="section-label">04 TRAVEL PREPARATION</span>
+                            <h2>READY WHEN YOU ARE.</h2>
+                            <p style="color:var(--text-muted); font-size:15px; margin:12px 0 24px; line-height:1.7;">
+                                Track your travel readiness score, generate a custom packing list based on destination and duration, and verify your pre-departure checklist.
+                            </p>
+
+                            <div style="display:flex; align-items:center; gap:24px; background:var(--bg-midnight); padding:20px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); margin-bottom:24px;">
+                                <div style="width:80px; height:80px; border-radius:50%; border:4px solid var(--accent-cyan); display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-size:22px; font-weight:700; color:var(--accent-cyan);">
+                                    85%
+                                </div>
+                                <div>
+                                    <strong style="color:var(--text-white); font-size:15px; font-family:var(--font-heading); display:block; margin-bottom:4px;">TRAVEL READINESS SCORE</strong>
+                                    <small style="color:var(--text-muted); font-size:12px; display:block;">✓ Itinerary ✓ Stay ✓ Budget ○ Packing ○ Documents</small>
+                                </div>
+                            </div>
+
+                            <button type="button" class="primary-btn" onclick="requireAuthNav('trips')">VIEW MY TRAVEL COMMAND CENTER →</button>
+                        </div>
+
+                        <div class="showcase-visual">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" alt="Travel Packing Essentials">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 6: SOCIAL PROOF STATEMENTS -->
+            <div class="quick-section">
+                <div class="container">
+                    <div class="section-heading text-center">
+                        <span class="section-label">BUILT FOR EVERY TYPE OF JOURNEY</span>
+                        <h2>DESIGNED FOR MODERN TRAVELERS</h2>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <span class="feat-icon">🏖</span>
+                            <h3>WEEKEND ESCAPES</h3>
+                            <p>Paced getaways to maximize relaxation without rushing through 15 spots.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feat-icon">🎒</span>
+                            <h3>SOLO ADVENTURES</h3>
+                            <p>Safe, budget-conscious trip plans with local street food and neighborhood highlights.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feat-icon">👨‍👩‍👧‍👦</span>
+                            <h3>FAMILY TRIPS</h3>
+                            <p>Balanced itineraries ensuring comfort, easy transit, and multi-generational fun.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feat-icon">✈</span>
+                            <h3>INTERNATIONAL EXPEDITIONS</h3>
+                            <p>Complete overseas guidance covering forex cards, e-SIMs, and visa readiness.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: HIGH CONVERTING CTA BANNER -->
+            <div class="quick-section bg-surface-dark">
                 <div class="container">
                     <div class="cta-banner-card text-center">
                         <span class="hero-eyebrow-pill">✦ PLAN LESS. WANDER MORE.</span>
-                        <h2 style="font-family:var(--font-heading); font-size:38px; color:var(--text-white); margin:12px 0;">READY TO WANDER BETTER?</h2>
-                        <p style="color:var(--text-muted); max-width:520px; margin:0 auto 28px; font-size:15px;">Join modern explorers using WANDERLY to build realistic itineraries and master their trip budget.</p>
+                        <h2 style="font-family:var(--font-heading); font-size:42px; color:var(--text-white); margin:12px 0;">READY TO WANDER BETTER?</h2>
+                        <p style="color:var(--text-muted); max-width:520px; margin:0 auto 28px; font-size:15px;">Build realistic itineraries, understand trip costs, and travel without chaos.</p>
                         <button type="button" class="primary-btn lg" onclick="requireAuthNav('planner')">START PLANNING YOUR TRIP NOW — FREE ↗</button>
                     </div>
                 </div>
