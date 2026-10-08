@@ -471,11 +471,11 @@ img {
 
 .hero-main-card {
     position: relative;
-    border-radius: var(--radius-lg);
+    border-radius: 32px;
     overflow: hidden;
-    height: 440px;
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--border-subtle);
+    height: 480px;
+    box-shadow: 0 30px 80px rgba(7, 19, 31, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     img {
         width: 100%;
@@ -485,124 +485,46 @@ img {
     }
 
     &:hover img {
-        transform: scale(1.05);
+        transform: scale(1.04);
     }
 }
 
-.hero-img-overlay {
+.hero-image-pill-label {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(0deg, rgba(7, 19, 31, 0.95) 0%, transparent 100%);
-    padding: 24px;
-    z-index: 1;
-}
-
-/* PREMIUM TRANSLUCENT LIGHT GLASS FLOATING CARDS */
-.floating-card {
-    position: absolute;
+    bottom: 20px;
+    left: 20px;
     background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    padding: 12px 18px;
-    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 8px 14px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    box-shadow: 0 20px 48px rgba(7, 19, 31, 0.14), 0 4px 16px rgba(0, 0, 0, 0.04);
-    cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-    z-index: 3;
-
-    &:hover {
-        transform: translateY(-4px) scale(1.02);
-        box-shadow: 0 26px 56px rgba(7, 19, 31, 0.22);
-    }
-
-    small {
-        font-family: var(--font-heading);
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 1.2px;
-        text-transform: uppercase;
-        display: block;
-        margin-bottom: 2px;
-    }
-
-    strong {
-        font-family: var(--font-heading);
-        font-size: 14px;
-        font-weight: 700;
-        color: #07131F !important;
-        display: block;
-        line-height: 1.25;
-    }
-
-    span {
-        font-size: 12px;
-        font-weight: 600;
-        color: #53697A !important;
-        display: block;
-        margin-top: 1px;
-    }
+    gap: 8px;
+    box-shadow: 0 8px 20px rgba(7, 19, 31, 0.12);
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.badge-label-cyan { color: #08BFEF !important; }
-.badge-label-orange { color: #E05A40 !important; }
-.badge-label-gold { color: #C89520 !important; }
-
-@keyframes floatGlassCard {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-.floating-card.card-1 {
-    top: 24px;
-    left: -20px;
-    animation: floatGlassCard 5s ease-in-out infinite;
-}
-
-.floating-card.card-2 {
-    bottom: 50px;
-    right: -20px;
-    animation: floatGlassCard 6s ease-in-out infinite;
-    animation-delay: 2.2s;
-}
-
-.floating-card.card-3 {
-    bottom: -18px;
-    left: 20px;
-    animation: floatGlassCard 5.5s ease-in-out infinite;
-    animation-delay: 1.1s;
-}
-
-.ping-dot {
-    display: inline-block;
+.hero-image-pill-label .pill-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: #08BFEF;
-    margin-right: 5px;
-    box-shadow: 0 0 8px #08BFEF;
 }
 
-.icon-badge {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(8, 191, 239, 0.14);
-    color: #008CB8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero-image-pill-label strong {
+    font-family: var(--font-heading);
+    font-size: 13px;
     font-weight: 700;
-    font-size: 14px;
-    flex-shrink: 0;
+    color: #07131F;
+}
 
-    &.orange { background: rgba(255, 128, 102, 0.16); color: #D64B32; }
-    &.gold { background: rgba(255, 200, 87, 0.22); color: #9E7008; }
+.hero-image-pill-label small {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    color: #008CB8;
 }
 
 /* SECTION BACKGROUND RHYTHM */
@@ -1732,30 +1654,6 @@ img {
     .trust-strip { grid-template-columns: 1fr; }
     .planner-form-grid, .add-expense-card { grid-template-columns: 1fr; }
     .cost-breakdown-grid { grid-template-columns: 1fr 1fr; }
-    
-    /* MOBILE HERO FLOATING CARDS BEHAVIOR */
-    .hero-visual-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 24px;
-    }
-    .hero-main-card {
-        height: 280px;
-    }
-    .floating-card {
-        position: relative;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        width: 100%;
-        animation: none !important;
-        background: rgba(255, 255, 255, 0.92);
-        box-shadow: 0 8px 24px rgba(7, 19, 31, 0.08);
-    }
-    .floating-card.card-3 {
-        display: none; /* Keep hero clean on mobile with top 2 essential cards */
-    }
+    .hero-main-card { height: 280px; border-radius: 20px; }
     .quick-section { padding: 64px 0; }
 }
