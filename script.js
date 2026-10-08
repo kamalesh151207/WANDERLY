@@ -1,7 +1,8 @@
 /* =========================================================
-   WANDERLY — Travel Operating System Engine (script.js)
+   WANDERLY — Travel Operating System & Platform Engine (script.js)
    Brand Philosophy: "Plan less. Wander more."
-   Flow: DISCOVER → PLAN → OPTIMIZE → PREPARE → WANDER
+   Routes: #landing, #home, #discover, #destinations, #planner,
+           #budget, #trips, #guides, #about, #login, #register
    Constraints: Exactly 3 frontend files (index.html, style.css, script.js)
    ========================================================= */
 
@@ -612,248 +613,57 @@ document.addEventListener('DOMContentLoaded', () => {
     --------------------------------------------------------- */
     const GUIDES_DATA = [
         {
-            id: 'g1',
-            key: 'international',
-            category: 'Planning',
-            badge: 'FIRST TIMER',
-            readTime: '6 min read',
+            id: 'g1', key: 'international', category: 'Planning', badge: 'FIRST TIMER', readTime: '6 min read',
             image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80',
             title: 'How to Plan Your First International Trip Without Overthinking',
             desc: 'Essential checklist covering passport validity, forex cards, e-SIMs, and travel insurance.',
-            content: `
-                <p>Planning an overseas journey can feel daunting, but breaking it down into simple steps guarantees a stress-free departure.</p>
-                <h3>1. Passport & Visa Validity</h3>
-                <p>Most countries require your passport to have at least 6 months of validity remaining from your date of entry. Check visa rules early — countries like Thailand and Dubai offer simple e-Visas or Visa-on-Arrival.</p>
-                <h3>2. Forex Cards & Foreign Exchange</h3>
-                <p>Never exchange currency at airports — rates are up to 15% worse. Carry a multi-currency Forex card or zero-forex-markup debit card (like Niyo or Scapia) and carry $100 in physical cash for emergency cash payments.</p>
-                <h3>3. Instant Connectivity via e-SIM</h3>
-                <p>Avoid expensive international roaming. Install an e-SIM app (Airalo or Holafly) before landing to get instant 5G data activation upon arrival for under ₹1,000.</p>
-            `
+            content: `<p>Planning an overseas journey can feel daunting, but breaking it down into simple steps guarantees a stress-free departure.</p><h3>1. Passport & Visa Validity</h3><p>Most countries require your passport to have at least 6 months of validity remaining from your date of entry. Check visa rules early — countries like Thailand and Dubai offer simple e-Visas or Visa-on-Arrival.</p><h3>2. Forex Cards & Foreign Exchange</h3><p>Never exchange currency at airports — rates are up to 15% worse. Carry a multi-currency Forex card or zero-forex-markup debit card and carry $100 in physical cash for emergency cash payments.</p><h3>3. Instant Connectivity via e-SIM</h3><p>Avoid expensive international roaming. Install an e-SIM app (Airalo or Holafly) before landing to get instant 5G data activation upon arrival for under ₹1,000.</p>`
         },
         {
-            id: 'g2',
-            key: 'weekend',
-            category: 'Weekend',
-            badge: 'SHORT ESCAPES',
-            readTime: '4 min read',
+            id: 'g2', key: 'weekend', category: 'Weekend', badge: 'SHORT ESCAPES', readTime: '4 min read',
             image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80',
             title: '7 Budget-Friendly Weekend Escapes That Feel Premium',
             desc: 'Pacing secrets for 3-day getaways to maximize relaxation without rushing.',
-            content: `
-                <p>Short 3-day weekend getaways require smart pacing. Attempting to cram 15 sights into 48 hours results in fatigue instead of renewal.</p>
-                <h3>Day 1: Orientation & Night Vibe</h3>
-                <p>Check into your stay, grab local street food, and take a casual evening stroll to get a feel for the destination.</p>
-                <h3>Day 2: Peak Anchor Experience</h3>
-                <p>Dedicate your middle day to ONE major highlight — whether climbing Kolukkumalai in Munnar or catching an ocean sunset in Goa.</p>
-                <h3>Day 3: Slow Coffee & Regional Shopping</h3>
-                <p>Keep your final day light. Enjoy a long café breakfast, buy local spices or souvenirs, and head home refreshed.</p>
-            `
+            content: `<p>Short 3-day weekend getaways require smart pacing. Attempting to cram 15 sights into 48 hours results in fatigue instead of renewal.</p><h3>Day 1: Orientation & Night Vibe</h3><p>Check into your stay, grab local street food, and take a casual evening stroll to get a feel for the destination.</p><h3>Day 2: Peak Anchor Experience</h3><p>Dedicate your middle day to ONE major highlight — whether climbing Kolukkumalai in Munnar or catching an ocean sunset in Goa.</p><h3>Day 3: Slow Coffee & Regional Shopping</h3><p>Keep your final day light. Enjoy a long café breakfast, buy local spices or souvenirs, and head home refreshed.</p>`
         },
         {
-            id: 'g3',
-            key: 'budget25k',
-            category: 'Budget',
-            badge: 'SMART SPENDING',
-            readTime: '5 min read',
+            id: 'g3', key: 'budget25k', category: 'Budget', badge: 'SMART SPENDING', readTime: '5 min read',
             image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80',
             title: 'How to Build a High-Impact ₹25,000 Vacation for Two',
             desc: 'Where to allocate money and where to save without sacrificing comfort.',
-            content: `
-                <p>A ₹25,000 budget for two people is more than enough for destinations like Goa, Jaipur, or Munnar if you decouple transit from accommodation.</p>
-                <h3>The 40-35-25 Spending Rule</h3>
-                <p>Allocate 40% (₹10,000) to accommodation, 35% (₹8,750) to food & drinks, and 25% (₹6,250) to activities & local transport.</p>
-                <h3>Book Overnight Trains or Express Buses</h3>
-                <p>Choosing overnight luxury sleeper buses or AC trains saves 60% compared to last-minute flights, while also eliminating one night of hotel costs!</p>
-            `
+            content: `<p>A ₹25,000 budget for two people is more than enough for destinations like Goa, Jaipur, or Munnar if you decouple transit from accommodation.</p><h3>The 40-35-25 Spending Rule</h3><p>Allocate 40% to accommodation, 35% to food & drinks, and 25% to activities & local transport.</p><h3>Book Overnight Trains or Express Buses</h3><p>Choosing overnight luxury sleeper buses or AC trains saves 60% compared to last-minute flights, while also eliminating one night of hotel costs!</p>`
         },
         {
-            id: 'g4',
-            key: 'food',
-            category: 'Food',
-            badge: 'CULINARY JOURNEY',
-            readTime: '5 min read',
+            id: 'g4', key: 'food', category: 'Food', badge: 'CULINARY JOURNEY', readTime: '5 min read',
             image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
             title: 'Culinary Travel Hacks: How to Eat Like a Local Anywhere',
             desc: 'Spotting authentic eateries, avoiding tourist traps, and staying healthy.',
-            content: `
-                <p>Food is the soul of travel. Here is how to find unforgettable regional dishes without falling into overpriced tourist traps.</p>
-                <h3>The 2-Block Rule</h3>
-                <p>Never eat directly in front of major monuments or central plazas. Walk just two blocks into residential side streets to find long queues of locals and half-price authentic menus.</p>
-                <h3>Look for Single-Dish Specialists</h3>
-                <p>In food capitals like Bangkok, Tokyo, or Jaipur, the best meals come from vendors who have perfected a single dish for decades.</p>
-            `
+            content: `<p>Food is the soul of travel. Here is how to find unforgettable regional dishes without falling into overpriced tourist traps.</p><h3>The 2-Block Rule</h3><p>Never eat directly in front of major monuments or central plazas. Walk just two blocks into residential side streets to find long queues of locals and half-price authentic menus.</p>`
         },
         {
-            id: 'g5',
-            key: 'nature',
-            category: 'Nature',
-            badge: 'SLOW TRAVEL',
-            readTime: '4 min read',
+            id: 'g5', key: 'nature', category: 'Nature', badge: 'SLOW TRAVEL', readTime: '4 min read',
             image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80',
             title: 'The Art of Slow Travel: How to Travel Without Overplanning',
             desc: 'Leaving room for serendipity, quiet moments, and spontaneous discoveries.',
-            content: `
-                <p>Over-scheduled itineraries turn vacations into work tasks. True travel magic happens in unscripted moments.</p>
-                <h3>Schedule One Anchor Activity Per Day</h3>
-                <p>Pick one non-negotiable activity per day (e.g. morning museum or sunset hike). Leave the rest of your day completely open.</p>
-                <h3>Talk to Local Baristas & Hosts</h3>
-                <p>Ask your stay host or local coffee barista: "Where do you eat on your day off?" This single question reveals places no travel blog lists.</p>
-            `
+            content: `<p>Over-scheduled itineraries turn vacations into work tasks. True travel magic happens in unscripted moments.</p><h3>Schedule One Anchor Activity Per Day</h3><p>Pick one non-negotiable activity per day (e.g. morning museum or sunset hike). Leave the rest of your day completely open.</p>`
         },
         {
-            id: 'g6',
-            key: 'hacks',
-            category: 'Budget',
-            badge: 'OFF-PEAK TRAVEL',
-            readTime: '6 min read',
+            id: 'g6', key: 'hacks', category: 'Budget', badge: 'OFF-PEAK TRAVEL', readTime: '6 min read',
             image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
             title: 'Off-Peak Secrets: 50% Off Luxury Stays in Bali & Europe',
             desc: 'Targeting shoulder seasons to get 5-star experiences at 3-star prices.',
-            content: `
-                <p>High season brings high prices and packed crowds. Shoulder season offers ideal weather with massive hotel discounts.</p>
-                <h3>Bali in April & October</h3>
-                <p>Right before and after monsoon season, rainfall is rare, temperatures are pleasant, and luxury villa rates drop by up to 50%.</p>
-                <h3>European Shoulder Months</h3>
-                <p>Visit Paris or Rome in May or September. You will avoid the blistering July heat waves and enjoy reasonable room rates.</p>
-            `
-        },
-        {
-            id: 'g7',
-            key: 'nomad',
-            category: 'Planning',
-            badge: 'REMOTE WORK',
-            readTime: '5 min read',
-            image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
-            title: 'Work + Wander: The Digital Nomad Guide to Southeast Asia',
-            desc: 'Finding high-speed Wi-Fi, co-living spaces, and balancing work with travel.',
-            content: `
-                <p>Working remotely while exploring the world requires clear boundaries, reliable Wi-Fi, and ergonomically sound workspaces.</p>
-                <p>Top digital nomad hubs like Canggu (Bali) and Chiang Mai offer dedicated co-working passes with high-speed fiber internet for under ₹8,000/month.</p>
-            `
-        },
-        {
-            id: 'g8',
-            key: 'solo',
-            category: 'International',
-            badge: 'SOLO TRAVEL',
-            readTime: '6 min read',
-            image: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80',
-            title: 'Solo Travel 101: Safety, Confidence & Unforgettable Freedom',
-            desc: 'Practical safety tips, meeting fellow travelers, and enjoying your own company.',
-            content: `
-                <p>Solo travel is one of the most empowering experiences you can have. Start with welcoming destinations like Kyoto, Singapore, or Munnar.</p>
-                <p>Always share your live location via WhatsApp with a trusted friend, stay at social boutique hostels, and join free walking tours to meet people easily.</p>
-            `
-        },
-        {
-            id: 'g9',
-            key: 'packing',
-            category: 'Planning',
-            badge: 'MINIMALISM',
-            readTime: '4 min read',
-            image: 'https://images.unsplash.com/photo-1553531384-cc14c8086119?auto=format&fit=crop&w=800&q=80',
-            title: 'Pack Carry-On Only: The 5-4-3-2-1 Capsule Wardrobe Method',
-            desc: 'Never pay checked bag fees again with this foolproof packing strategy.',
-            content: `
-                <p>Travel light to move fast. Use compression packing cubes and stick to neutral color palettes that mix and match easily.</p>
-                <p>The 5-4-3-2-1 rule: 5 sets of socks & underwear, 4 tops, 3 bottoms, 2 pairs of shoes, and 1 outerwear jacket.</p>
-            `
-        },
-        {
-            id: 'g10',
-            key: 'sustainable',
-            category: 'Nature',
-            badge: 'ECO TRAVEL',
-            readTime: '5 min read',
-            image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80',
-            title: 'Sustainable Tourism: Leaving Places Better Than You Found Them',
-            desc: 'Supporting local communities, reducing plastic waste, and ethical wildlife visits.',
-            content: `
-                <p>Be a conscious traveler. Carry a reusable insulated water bottle, decline single-use plastic straws, and buy directly from local artisans.</p>
-                <p>Never support unethical animal rides or close-up wildlife photo props — choose certified sanctuaries instead.</p>
-            `
-        },
-        {
-            id: 'g11',
-            key: 'currency',
-            category: 'Budget',
-            badge: 'FINANCES',
-            readTime: '4 min read',
-            image: 'https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=800&q=80',
-            title: 'Zero FX Fees: Master Foreign Exchange & Airport ATMs',
-            desc: 'How to avoid hidden dynamic currency conversion traps overseas.',
-            content: `
-                <p>When paying abroad or withdrawing cash from ATMs, ALWAYS choose to be charged in the LOCAL CURRENCY rather than your home currency.</p>
-                <p>Choosing your home currency triggers "Dynamic Currency Conversion" (DCC), adding a 6% to 9% hidden fee on top of bank charges!</p>
-            `
-        },
-        {
-            id: 'g12',
-            key: 'insurance',
-            category: 'Planning',
-            badge: 'SAFETY',
-            readTime: '5 min read',
-            image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
-            title: 'Travel Insurance 101: What Is Covered & What Is a Scam',
-            desc: 'Understanding medical coverage, flight delays, and baggage loss protection.',
-            content: `
-                <p>Travel insurance is non-negotiable for international trips. A simple ₹800 policy can save lakhs in emergency medical situations.</p>
-                <p>Ensure your policy covers emergency medical evacuation, flight cancellations due to severe weather, and lost baggage compensation.</p>
-            `
-        },
-        {
-            id: 'g13',
-            key: 'photography',
-            category: 'Weekend',
-            badge: 'CREATIVE',
-            readTime: '4 min read',
-            image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80',
-            title: 'Mobile Travel Photography: Capturing Professional Memories',
-            desc: 'Mastering golden hour lighting, grid lines, and subtle editing apps.',
-            content: `
-                <p>You do not need a heavy DSLR to take world-class travel photos. Enable the 3x3 camera grid on your phone to apply the rule of thirds.</p>
-                <p>Shoot during Golden Hour (30 minutes after sunrise or before sunset) for soft warm light, and edit subtly in Lightroom Mobile.</p>
-            `
-        },
-        {
-            id: 'g14',
-            key: 'trains',
-            category: 'Budget',
-            badge: 'SCENIC TRANSIT',
-            readTime: '5 min read',
-            image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=800&q=80',
-            title: 'Scenic Railway Journeys vs Flight Hopping',
-            desc: 'Why train travel offers richer views, lower carbon footprint, and lower costs.',
-            content: `
-                <p>High-speed trains in Europe and Japan (like the TGV or Shinkansen) run city-center to city-center, avoiding 3-hour airport security checks.</p>
-                <p>Plus, mountain railways in Switzerland or India offer breathtaking panoramic views impossible to see from 35,000 feet.</p>
-            `
-        },
-        {
-            id: 'g15',
-            key: 'gems',
-            category: 'International',
-            badge: 'DISCOVERY',
-            readTime: '6 min read',
-            image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-            title: 'Finding Hidden Gems Beyond Instagram Tourist Hotspots',
-            desc: 'Uncovering quiet fishing villages, hidden waterfalls, and secret viewpoints.',
-            content: `
-                <p>Skip over-visited Instagram photo spots to experience authentic local life.</p>
-                <p>Research government tourism archives, read local travel blogs, and hire local guides who know off-grid trails and uncrowded beaches.</p>
-            `
+            content: `<p>High season brings high prices and packed crowds. Shoulder season offers ideal weather with massive hotel discounts.</p>`
         }
     ];
 
     /* ---------------------------------------------------------
-       3. LOCALSTORAGE HELPER FUNCTIONS
+       3. AUTHENTICATION & LOCALSTORAGE HELPERS
     --------------------------------------------------------- */
     function loadData(key, fallback) {
         try {
             const data = localStorage.getItem(key);
             return data ? JSON.parse(data) : fallback;
         } catch (e) {
-            console.warn(`LocalStorage read error for key "${key}":`, e);
             return fallback;
         }
     }
@@ -866,54 +676,91 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // App Persistent State Variables
+    // Demo Session State
+    let currentUser = loadData('wanderly_user', null);
+
+    window.isLoggedIn = function() {
+        return currentUser !== null && currentUser.loggedIn === true;
+    };
+
+    window.getCurrentUser = function() {
+        return currentUser;
+    };
+
+    window.loginUser = function(email, password) {
+        currentUser = {
+            name: email.split('@')[0].toUpperCase(),
+            email: email,
+            travelStyle: 'Balanced',
+            budgetPref: '₹50,000',
+            loggedIn: true,
+            loginTime: new Date().toISOString()
+        };
+        saveData('wanderly_user', currentUser);
+        updateNavState();
+        showToast(`Welcome back, ${currentUser.name}!`);
+        navigateTo('home');
+    };
+
+    window.registerUser = function(name, email, password, style, budget) {
+        currentUser = {
+            name: name || 'TRAVELER',
+            email: email,
+            travelStyle: style || 'Balanced',
+            budgetPref: budget || '₹50,000',
+            loggedIn: true,
+            registeredTime: new Date().toISOString()
+        };
+        saveData('wanderly_user', currentUser);
+        updateNavState();
+        showToast(`Account created successfully! Welcome to WANDERLY.`);
+        navigateTo('home');
+    };
+
+    window.logoutUser = function() {
+        currentUser = null;
+        localStorage.removeItem('wanderly_user');
+        updateNavState();
+        showToast('Logged out of WANDERLY.');
+        navigateTo('landing');
+    };
+
+    // Protected Route Nav Guard
+    window.requireAuthNav = function(targetPage) {
+        if (!isLoggedIn()) {
+            showToast('Please log in or register to access ' + targetPage.toUpperCase());
+            navigateTo('login');
+        } else {
+            navigateTo(targetPage);
+        }
+    };
+
+    /* ---------------------------------------------------------
+       4. APP PERSISTENT STATE VARIABLES
+    --------------------------------------------------------- */
     let savedTrips = loadData('wanderly_saved_trips', [
         {
-            id: 'trip_1',
-            destId: 'kyoto',
-            destinationName: 'Kyoto, Japan',
+            id: 'trip_1', destId: 'kyoto', destinationName: 'Kyoto, Japan',
             image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=85',
-            travellers: 2,
-            days: 5,
-            style: 'Balanced',
-            budget: 85000,
-            totalCost: 78500,
-            perPerson: 39250,
-            perDay: 15700,
-            status: 'READY',
-            travelDate: '2026-11-15',
-            dateSaved: 'Oct 04, 2026',
-            readiness: 85
+            travellers: 2, days: 5, style: 'Balanced', budget: 85000, totalCost: 78500, perPerson: 39250, perDay: 15700,
+            status: 'READY', travelDate: '2026-11-15', dateSaved: 'Oct 04, 2026', readiness: 85
         },
         {
-            id: 'trip_2',
-            destId: 'bali',
-            destinationName: 'Bali, Indonesia',
+            id: 'trip_2', destId: 'bali', destinationName: 'Bali, Indonesia',
             image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85',
-            travellers: 2,
-            days: 5,
-            style: 'Balanced',
-            budget: 45000,
-            totalCost: 42800,
-            perPerson: 21400,
-            perDay: 8560,
-            status: 'PLANNING',
-            travelDate: '2026-12-10',
-            dateSaved: 'Oct 06, 2026',
-            readiness: 60
+            travellers: 2, days: 5, style: 'Balanced', budget: 45000, totalCost: 42800, perPerson: 21400, perDay: 8560,
+            status: 'PLANNING', travelDate: '2026-12-10', dateSaved: 'Oct 06, 2026', readiness: 60
         }
     ]);
 
     let favorites = loadData('wanderly_favorites', ['kyoto', 'bali', 'munnar']);
     let recentlyViewed = loadData('wanderly_recent', ['kyoto', 'bali', 'goa', 'dubai']);
     let compareList = loadData('wanderly_compare', ['bali', 'goa', 'munnar']);
-    
     let expenses = loadData('wanderly_expenses', [
         { id: 1, title: 'Hotel Deposit', category: 'Accommodation', amount: 12000, date: '2026-10-01', note: 'Pre-paid 2 nights' },
         { id: 2, title: 'Flight Tickets', category: 'Transport', amount: 16000, date: '2026-10-02', note: 'Return ticket' },
-        { id: 3, title: 'Heritage Dinner', category: 'Food', amount: 24000, date: '2026-10-05', note: 'Seafood shack' }
+        { id: 3, title: 'Heritage Dinner', category: 'Food', amount: 2400, date: '2026-10-05', note: 'Seafood shack' }
     ]);
-
     let checklist = loadData('wanderly_checklist', [
         { id: 1, category: 'DOCUMENTS', title: 'Passport validity verified (6+ months)', done: true },
         { id: 2, category: 'DOCUMENTS', title: 'Hotel & Flight confirmations saved offline', done: true },
@@ -921,7 +768,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 4, category: 'FINANCES', title: 'Zero-Forex card activated & physical cash exchanged', done: false },
         { id: 5, category: 'HEALTH', title: 'Travel insurance policy & first-aid kit packed', done: false }
     ]);
-
     let packingList = loadData('wanderly_packing', [
         { id: 1, category: 'Clothing', title: 'Light linen shirts & shorts (4 pairs)', done: true },
         { id: 2, category: 'Footwear', title: 'Comfortable walking sneakers & sandals', done: true },
@@ -929,24 +775,17 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 4, category: 'Electronics', title: 'Camera, memory cards & portable charger', done: false }
     ]);
 
-    let notifications = loadData('wanderly_notifications', [
-        { id: 1, title: 'Welcome to WANDERLY', time: 'Just now', read: false },
-        { id: 2, title: 'Kyoto Trip Ready', time: '2h ago', read: false }
-    ]);
-
     let currentTheme = localStorage.getItem('wanderly_theme') || 'dark';
 
     /* ---------------------------------------------------------
-       4. THEME CONTROLLER
+       5. THEME CONTROLLER & NAVBAR STATE MANAGER
     --------------------------------------------------------- */
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('wanderly_theme', theme);
         currentTheme = theme;
         const btn = document.getElementById('themeToggleBtn');
-        if (btn) {
-            btn.innerHTML = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
-        }
+        if (btn) btn.innerHTML = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
     }
 
     window.toggleTheme = function() {
@@ -957,14 +796,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     applyTheme(currentTheme);
 
+    function updateNavState() {
+        const publicNav = document.getElementById('publicNavbar');
+        const appNav = document.getElementById('appNavbar');
+        const userProfileBtn = document.getElementById('appUserProfileBtn');
+
+        if (currentPage === 'landing' || currentPage === 'login' || currentPage === 'register') {
+            if (publicNav) publicNav.style.display = 'block';
+            if (appNav) appNav.style.display = 'none';
+        } else {
+            if (publicNav) publicNav.style.display = 'none';
+            if (appNav) appNav.style.display = 'block';
+        }
+
+        if (userProfileBtn) {
+            userProfileBtn.textContent = isLoggedIn() ? `👤 ${currentUser.name}` : '🔑 Log in';
+        }
+
+        // Update badge count
+        const badge = document.getElementById('navTripBadge');
+        if (badge) badge.textContent = savedTrips.length;
+    }
+
+    // Navbar Scroll Backdrop Blur effect for Landing
+    window.addEventListener('scroll', () => {
+        const publicNav = document.getElementById('publicNavbar');
+        if (publicNav) {
+            if (window.scrollY > 40) {
+                publicNav.classList.add('scrolled');
+            } else {
+                publicNav.classList.remove('scrolled');
+            }
+        }
+    });
+
     /* ---------------------------------------------------------
-       5. SPA ROUTER WITH HISTORY API & SCROLL RESTORATION
+       6. SPA ROUTER WITH HISTORY API & SCROLL RESTORATION
     --------------------------------------------------------- */
-    const VALID_PAGES = ['home', 'discover', 'destinations', 'planner', 'budget', 'trips', 'guides', 'about'];
-    let currentPage = 'home';
+    const VALID_PAGES = ['landing', 'home', 'discover', 'destinations', 'planner', 'budget', 'trips', 'guides', 'about', 'login', 'register'];
+    let currentPage = 'landing';
 
     window.navigateTo = function(pageId, pushToHistory = true) {
-        if (!VALID_PAGES.includes(pageId)) pageId = 'home';
+        if (!VALID_PAGES.includes(pageId)) pageId = 'landing';
+
+        // Protected routes guard
+        if ((pageId === 'trips' || pageId === 'budget') && !isLoggedIn()) {
+            showToast('Please log in or register to access ' + pageId.toUpperCase());
+            pageId = 'login';
+        }
 
         // 1. Hide active page views
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -977,7 +856,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         currentPage = pageId;
 
-        // 3. Update active nav links
+        // 3. Update Active Nav Links & Navbars
         document.querySelectorAll('[data-page]').forEach(link => {
             if (link.getAttribute('data-page') === pageId) {
                 link.classList.add('active');
@@ -985,6 +864,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.remove('active');
             }
         });
+
+        updateNavState();
 
         // 4. Push State to URL Hash
         if (pushToHistory) {
@@ -999,7 +880,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileMenu) mobileMenu.classList.remove('open');
 
         // 7. Route Specific Triggers & Renders
-        if (pageId === 'home') renderHomePage();
+        if (pageId === 'landing') renderLandingPage();
+        if (pageId === 'home') renderAppDashboard();
         if (pageId === 'discover') renderDiscoverPage();
         if (pageId === 'destinations') renderDestinationsPage();
         if (pageId === 'budget') renderBudgetDashboard();
@@ -1009,7 +891,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('popstate', (e) => {
         const page = (e.state && e.state.page) ? e.state.page : window.location.hash.replace('#', '').trim();
-        navigateTo(page || 'home', false);
+        navigateTo(page || 'landing', false);
     });
 
     window.addEventListener('hashchange', () => {
@@ -1020,7 +902,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ---------------------------------------------------------
-       6. UTILITIES: CURRENCY FORMATTER & MATCH SCORE CALCULATOR
+       7. UTILITIES: CURRENCY FORMATTER & MATCH SCORE CALCULATOR
     --------------------------------------------------------- */
     function formatINR(val) {
         if (isNaN(val) || val === null || val === undefined) return '₹0';
@@ -1029,29 +911,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function calculateMatchScore(dest, userBudget = 50000, days = 4, style = 'balanced', selectedInterests = [], mood = null) {
         let score = 82;
-
-        // Budget evaluation
         const styleMultiplier = { budget: 0.78, balanced: 1.0, comfort: 1.3, premium: 1.8 }[style] || 1.0;
         const estimatedTotal = (dest.transportCost + (dest.stayCostPerDay + dest.foodCostPerDay + dest.activityCostPerDay) * days) * 2 * styleMultiplier;
 
-        if (userBudget && estimatedTotal <= userBudget) {
-            score += 12;
-        } else if (userBudget && estimatedTotal <= userBudget * 1.2) {
-            score += 4;
-        } else {
-            score -= 10;
-        }
+        if (userBudget && estimatedTotal <= userBudget) score += 12;
+        else if (userBudget && estimatedTotal <= userBudget * 1.2) score += 4;
+        else score -= 10;
 
-        // Mood evaluation
-        if (mood && dest.mood.includes(mood)) {
-            score += 6;
-        }
-
+        if (mood && dest.mood.includes(mood)) score += 6;
         return Math.max(65, Math.min(99, score));
     }
 
     /* ---------------------------------------------------------
-       7. GLOBAL SEARCH & COMMAND PALETTE OVERLAY
+       8. GLOBAL SEARCH COMMAND PALETTE & TOAST SYSTEM
     --------------------------------------------------------- */
     window.toggleSearchOverlay = function() {
         const overlay = document.getElementById('globalSearchOverlay');
@@ -1070,24 +942,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const q = query.trim().toLowerCase();
 
         if (!q) {
-            list.innerHTML = `
-                <div style="padding:16px; color:var(--text-muted); text-align:center; font-size:13px;">
-                    Search destinations, travel styles, or saved guides...
-                </div>
-            `;
+            list.innerHTML = `<div style="padding:16px; color:var(--text-muted); text-align:center; font-size:13px;">Search destinations, travel styles, or saved guides...</div>`;
             return;
         }
 
-        const matchedDests = DESTINATIONS.filter(d => 
-            d.name.toLowerCase().includes(q) || 
-            d.country.toLowerCase().includes(q) || 
-            d.categories.toLowerCase().includes(q)
-        );
-
-        const matchedGuides = GUIDES_DATA.filter(g => 
-            g.title.toLowerCase().includes(q) || 
-            g.category.toLowerCase().includes(q)
-        );
+        const matchedDests = DESTINATIONS.filter(d => d.name.toLowerCase().includes(q) || d.country.toLowerCase().includes(q) || d.categories.toLowerCase().includes(q));
+        const matchedGuides = GUIDES_DATA.filter(g => g.title.toLowerCase().includes(q) || g.category.toLowerCase().includes(q));
 
         let html = '';
 
@@ -1098,7 +958,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="search-result-item" onclick="toggleSearchOverlay(); openDestModal('${dest.id}')">
                         <div>
                             <strong style="font-family:var(--font-heading); color:var(--text-white); font-size:15px;">${dest.name}, ${dest.country}</strong>
-                            <small style="display:block; color:var(--text-muted); font-size:12px;">${dest.categories} · From ${dest.budgetRange.split('–')[0]}</small>
+                            <small style="display:block; color:var(--text-muted); font-size:12px;">${dest.categories} · ${dest.budgetRange}</small>
                         </div>
                         <button type="button" class="text-btn">View place →</button>
                     </div>
@@ -1128,9 +988,6 @@ document.addEventListener('DOMContentLoaded', () => {
         list.innerHTML = html;
     };
 
-    /* ---------------------------------------------------------
-       8. TOAST NOTIFICATION & FAVORITES ENGINE
-    --------------------------------------------------------- */
     window.showToast = function(msg) {
         const toast = document.getElementById('toast');
         if (!toast) return;
@@ -1149,22 +1006,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         saveData('wanderly_favorites', favorites);
         if (btn) btn.classList.toggle('active', favorites.includes(destId));
-        
-        // Refresh views if active
-        if (currentPage === 'trips') renderMyTripsPage();
+        if (currentPage === 'trips' || currentPage === 'home') renderMyTripsPage();
     };
 
     /* ---------------------------------------------------------
-       9. HOME PAGE (#page-home) COMPONENT RENDERING
+       9. LANDING PAGE (#page-landing) COMPONENT RENDERING
     --------------------------------------------------------- */
-    function renderHomePage() {
-        const featuredGrid = document.getElementById('homeFeaturedGrid');
-        if (!featuredGrid) return;
+    function renderLandingPage() {
+        const grid = document.getElementById('landingPreviewGrid');
+        if (!grid) return;
 
-        const featuredDests = [DESTINATIONS[0], DESTINATIONS[1], DESTINATIONS[2], DESTINATIONS[4]]; // Bali, Kyoto, Munnar, Dubai
+        const previewDests = [DESTINATIONS[0], DESTINATIONS[1], DESTINATIONS[2], DESTINATIONS[4], DESTINATIONS[10], DESTINATIONS[6]];
 
-        featuredGrid.innerHTML = featuredDests.map((dest, idx) => `
-            <article class="destination-card ${idx === 0 ? 'large' : ''}" onclick="openDestModal('${dest.id}')">
+        grid.innerHTML = previewDests.map(dest => `
+            <article class="destination-card" onclick="openDestModal('${dest.id}')">
                 <div class="card-top-badges">
                     <span class="match-badge">${dest.match}% MATCH</span>
                     <button type="button" class="fav-btn ${favorites.includes(dest.id) ? 'active' : ''}" onclick="event.stopPropagation(); toggleFavorite('${dest.id}', this)">♥</button>
@@ -1182,6 +1037,60 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
 
+    /* ---------------------------------------------------------
+       10. APP DASHBOARD (#page-home) - PERSONALIZED USER EXPERIENCE
+    --------------------------------------------------------- */
+    function renderAppDashboard() {
+        const userGreeting = document.getElementById('appUserGreeting');
+        if (userGreeting) {
+            userGreeting.textContent = currentUser ? `GOOD MORNING, ${currentUser.name}.` : 'GOOD MORNING, TRAVELER.';
+        }
+
+        const upcomingCard = document.getElementById('appUpcomingTripCard');
+        if (upcomingCard && savedTrips.length > 0) {
+            const nextTrip = savedTrips[0];
+            upcomingCard.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+                    <div>
+                        <span class="country-tag">UPCOMING ADVENTURE</span>
+                        <h3 style="font-family:var(--font-heading); font-size:24px; color:var(--text-white); margin-top:4px;">${nextTrip.destinationName}</h3>
+                    </div>
+                    <span class="trip-status-tag ready">READY</span>
+                </div>
+                <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">${nextTrip.days} Days · ${nextTrip.travellers} Travellers · Est. Total ${formatINR(nextTrip.totalCost)}</p>
+                <div style="display:flex; gap:12px;">
+                    <button type="button" class="primary-btn" style="padding:8px 16px; font-size:12px;" onclick="openTripDetailDashboard('${nextTrip.id}')">Open Trip Dashboard ↗</button>
+                    <button type="button" class="outline-btn" style="padding:8px 16px; font-size:12px;" onclick="planDestination('${nextTrip.destId}')">Edit Itinerary</button>
+                </div>
+            `;
+        }
+
+        renderHomePageFeatured();
+    }
+
+    function renderHomePageFeatured() {
+        const featuredGrid = document.getElementById('homeFeaturedGrid');
+        if (!featuredGrid) return;
+
+        featuredGrid.innerHTML = DESTINATIONS.slice(0, 4).map((dest, idx) => `
+            <article class="destination-card ${idx === 0 ? 'large' : ''}" onclick="openDestModal('${dest.id}')">
+                <div class="card-top-badges">
+                    <span class="match-badge">${dest.match}% MATCH</span>
+                    <button type="button" class="fav-btn ${favorites.includes(dest.id) ? 'active' : ''}" onclick="event.stopPropagation(); toggleFavorite('${dest.id}', this)">♥</button>
+                </div>
+                <img src="${dest.image}" alt="${dest.name}, ${dest.country}">
+                <div class="destination-overlay">
+                    <div>
+                        <span class="country-label">${dest.country.toUpperCase()}</span>
+                        <h3>${dest.name}</h3>
+                        <p>${dest.categories} · From ${dest.budgetRange.split('–')[0]}</p>
+                    </div>
+                    <button type="button" class="action-arrow">→</button>
+                </div>
+            </article>
+        `).join('');
+    }
+
     window.selectTravelMood = function(mood, btn) {
         document.querySelectorAll('.mood-pill').forEach(b => b.classList.remove('active'));
         if (btn) btn.classList.add('active');
@@ -1192,7 +1101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         resBox.innerHTML = `
             <div style="background:var(--bg-deep-ocean); border:1px solid var(--border-glow); padding:20px; border-radius:var(--radius-lg); margin-top:20px;">
-                <h4 style="font-family:var(--font-heading); color:var(--accent-cyan); font-size:13px; margin-bottom:12px; letter-spacing:1px; text-transform:uppercase;">RECOMMENDED DESTINATIONS FOR ${mood.toUpperCase()}</h4>
+                <h4 style="font-family:var(--font-heading); color:var(--accent-cyan); font-size:12px; letter-spacing:1px; margin-bottom:12px;">RECOMMENDED FOR ${mood.toUpperCase()}</h4>
                 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
                     ${filtered.slice(0, 3).map(dest => `
                         <div style="background:var(--bg-midnight); padding:14px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
@@ -1228,12 +1137,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /* ---------------------------------------------------------
-       10. DISCOVER PAGE (#page-discover) WORKSPACE
+       11. DISCOVER PAGE (#page-discover) WORKSPACE
     --------------------------------------------------------- */
     function renderDiscoverPage() {
-        const grid = document.getElementById('discoverGrid');
-        if (!grid) return;
-
         filterAndRenderDiscover();
     }
 
@@ -1268,17 +1174,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const grid = document.getElementById('discoverGrid');
         if (!grid) return;
 
-        if (list.length === 0) {
-            grid.innerHTML = `
-                <div style="grid-column: 1 / -1; padding:48px 20px; text-align:center; background:var(--bg-deep-ocean); border-radius:var(--radius-lg); border:1px dashed var(--border-subtle);">
-                    <h3 style="font-family:var(--font-heading); color:var(--text-white); margin-bottom:8px;">No places match your filters</h3>
-                    <p style="color:var(--text-muted); font-size:14px; margin-bottom:16px;">Try expanding your budget or clearing region filters.</p>
-                    <button type="button" class="outline-btn" onclick="resetDiscoverFilters()">Reset Filters</button>
-                </div>
-            `;
-            return;
-        }
-
         grid.innerHTML = list.map(dest => `
             <article class="destination-card" onclick="openDestModal('${dest.id}')">
                 <div class="card-top-badges">
@@ -1292,22 +1187,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>${dest.name}</h3>
                         <p>${dest.categories} · ${dest.budgetRange}</p>
                     </div>
-                    <button type="button" class="action-arrow" title="Explore details">→</button>
+                    <button type="button" class="action-arrow">→</button>
                 </div>
             </article>
         `).join('');
     };
 
-    window.resetDiscoverFilters = function() {
-        if (document.getElementById('discoverSearchInput')) document.getElementById('discoverSearchInput').value = '';
-        if (document.getElementById('discoverRegionFilter')) document.getElementById('discoverRegionFilter').value = 'all';
-        if (document.getElementById('discoverStyleFilter')) document.getElementById('discoverStyleFilter').value = 'all';
-        if (document.getElementById('discoverSortFilter')) document.getElementById('discoverSortFilter').value = 'match';
-        filterAndRenderDiscover();
-    };
-
     /* ---------------------------------------------------------
-       11. DESTINATIONS PAGE (#page-destinations) & COMPARISON MATRIX
+       12. DESTINATIONS PAGE & COMPARISON WORKSPACE
     --------------------------------------------------------- */
     function renderDestinationsPage() {
         renderDestinationsDirectory(DESTINATIONS);
@@ -1355,20 +1242,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const filtered = DESTINATIONS.filter(d => 
-            d.region.toLowerCase() === cat.toLowerCase() || 
-            d.categories.toLowerCase().includes(cat.toLowerCase())
-        );
-
+        const filtered = DESTINATIONS.filter(d => d.region.toLowerCase() === cat.toLowerCase() || d.categories.toLowerCase().includes(cat.toLowerCase()));
         renderDestinationsDirectory(filtered);
     };
 
-    // Full Screen Destination Detail View Modal
     window.openDestModal = function(destId) {
         const dest = DESTINATIONS.find(d => d.id === destId);
         if (!dest) return;
 
-        // Track recently viewed
         if (!recentlyViewed.includes(destId)) {
             recentlyViewed.unshift(destId);
             if (recentlyViewed.length > 6) recentlyViewed.pop();
@@ -1394,53 +1275,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div style="text-align:right;">
                     <span style="color:var(--accent-gold); font-weight:700; font-size:18px;">★ ${dest.rating}</span>
-                    <small style="display:block; color:var(--text-muted); font-size:12px;">OVERALL RATING</small>
+                    <small style="display:block; color:var(--text-muted); font-size:12px;">RATING</small>
                 </div>
             </div>
 
             <p style="color:var(--text-muted); font-size:14px; margin-bottom:20px; line-height:1.6;">${dest.bestFor}</p>
 
-            <!-- METRIC GRID -->
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:12px; margin-bottom:24px; background:var(--bg-midnight); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
                 <div>
-                    <small style="color:var(--text-muted); font-size:10px; font-weight:700; letter-spacing:1px; display:block;">BEST TIME</small>
+                    <small style="color:var(--text-muted); font-size:10px; font-weight:700; display:block;">BEST TIME</small>
                     <strong style="display:block; font-size:13px; margin-top:4px; color:var(--text-white); font-family:var(--font-heading);">${dest.bestTime}</strong>
                 </div>
                 <div>
-                    <small style="color:var(--text-muted); font-size:10px; font-weight:700; letter-spacing:1px; display:block;">ESTIMATED COST</small>
+                    <small style="color:var(--text-muted); font-size:10px; font-weight:700; display:block;">ESTIMATED COST</small>
                     <strong style="display:block; font-size:13px; margin-top:4px; color:var(--accent-orange); font-family:var(--font-heading);">${dest.budgetRange}</strong>
                 </div>
                 <div>
-                    <small style="color:var(--text-muted); font-size:10px; font-weight:700; letter-spacing:1px; display:block;">TRIP LENGTH</small>
+                    <small style="color:var(--text-muted); font-size:10px; font-weight:700; display:block;">DURATION</small>
                     <strong style="display:block; font-size:13px; margin-top:4px; color:var(--accent-cyan); font-family:var(--font-heading);">${dest.recommendedDays} Days</strong>
                 </div>
             </div>
 
-            <!-- GOOD FOR CHIPS -->
             <div style="margin-bottom:20px;">
                 <h4 style="font-family:var(--font-heading); color:var(--accent-cyan); font-size:12px; letter-spacing:1px; margin-bottom:10px;">GOOD FOR</h4>
                 <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                    ${dest.goodFor.map(chip => `<span style="background:rgba(77,231,255,0.1); color:var(--accent-cyan); border:1px solid rgba(77,231,255,0.2); padding:4px 12px; border-radius:var(--radius-full); font-size:12px; font-weight:500;">✓ ${chip}</span>`).join('')}
+                    ${dest.goodFor.map(chip => `<span style="background:rgba(77,231,255,0.1); color:var(--accent-cyan); border:1px solid rgba(77,231,255,0.2); padding:4px 12px; border-radius:var(--radius-full); font-size:12px;">✓ ${chip}</span>`).join('')}
                 </div>
             </div>
 
-            <!-- TOP EXPERIENCES & FOOD -->
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px;">
-                <div>
-                    <h4 style="font-family:var(--font-heading); color:var(--text-white); font-size:13px; margin-bottom:8px;">TOP EXPERIENCES</h4>
-                    <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:6px;">
-                        ${dest.topExperiences.map(exp => `<li style="font-size:12px; color:var(--text-muted);">✦ ${exp}</li>`).join('')}
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="font-family:var(--font-heading); color:var(--text-white); font-size:13px; margin-bottom:8px;">FOOD HIGHLIGHTS</h4>
-                    <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:6px;">
-                        ${dest.foodHighlights.map(f => `<li style="font-size:12px; color:var(--text-muted);">🍜 ${f}</li>`).join('')}
-                    </ul>
-                </div>
-            </div>
-
-            <!-- FOOTER BUTTONS -->
             <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-subtle); padding-top:16px;">
                 <button type="button" class="fav-btn ${favorites.includes(dest.id) ? 'active' : ''}" onclick="toggleFavorite('${dest.id}', this)">♥ Save Destination</button>
                 <div style="display:flex; gap:10px;">
@@ -1458,7 +1320,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (backdrop) backdrop.classList.remove('open');
     };
 
-    // Destination Comparison Workspace
     window.addDestinationToCompare = function(destId) {
         if (!compareList.includes(destId)) {
             if (compareList.length >= 3) compareList.shift();
@@ -1478,9 +1339,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return;
 
         const compareDests = DESTINATIONS.filter(d => compareList.includes(d.id));
-
         if (compareDests.length === 0) {
-            container.innerHTML = `<div style="padding:20px; text-align:center; color:var(--text-muted);">Select up to 3 destinations to compare metrics.</div>`;
+            container.innerHTML = `<div style="padding:20px; text-align:center; color:var(--text-muted);">Select up to 3 destinations to compare.</div>`;
             return;
         }
 
@@ -1515,50 +1375,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         </tr>
                         <tr>
                             <td><strong>Food Score</strong></td>
-                            ${compareDests.map(d => `
-                                <td>
-                                    <div style="display:flex; align-items:center; gap:8px;">
-                                        <div style="flex:1; height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
-                                            <div style="width:${d.scores.food}%; height:100%; background:var(--accent-cyan);"></div>
-                                        </div>
-                                        <small>${d.scores.food}%</small>
-                                    </div>
-                                </td>
-                            `).join('')}
-                        </tr>
-                        <tr>
-                            <td><strong>Nature & Scenery</strong></td>
-                            ${compareDests.map(d => `
-                                <td>
-                                    <div style="display:flex; align-items:center; gap:8px;">
-                                        <div style="flex:1; height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
-                                            <div style="width:${d.scores.nature}%; height:100%; background:var(--accent-orange);"></div>
-                                        </div>
-                                        <small>${d.scores.nature}%</small>
-                                    </div>
-                                </td>
-                            `).join('')}
+                            ${compareDests.map(d => `<td><span class="match-badge">${d.scores.food}%</span></td>`).join('')}
                         </tr>
                         <tr>
                             <td><strong>Value Score</strong></td>
-                            ${compareDests.map(d => `
-                                <td>
-                                    <div style="display:flex; align-items:center; gap:8px;">
-                                        <div style="flex:1; height:6px; background:rgba(255,255,255,0.1); border-radius:3px; overflow:hidden;">
-                                            <div style="width:${d.scores.value}%; height:100%; background:var(--accent-gold);"></div>
-                                        </div>
-                                        <small>${d.scores.value}%</small>
-                                    </div>
-                                </td>
-                            `).join('')}
-                        </tr>
-                        <tr>
-                            <td><strong>Action</strong></td>
-                            ${compareDests.map(d => `
-                                <td>
-                                    <button type="button" class="primary-btn" style="padding:6px 12px; font-size:12px; width:100%;" onclick="planDestination('${d.id}')">Plan ${d.name} ↗</button>
-                                </td>
-                            `).join('')}
+                            ${compareDests.map(d => `<td><span class="match-badge high">${d.scores.value}%</span></td>`).join('')}
                         </tr>
                     </tbody>
                 </table>
@@ -1573,7 +1394,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /* ---------------------------------------------------------
-       12. TRIP PLANNER PAGE (#page-planner) & GENERATED ITINERARY
+       13. TRIP PLANNER & GENERATED ITINERARY
     --------------------------------------------------------- */
     let activePlanCalculation = null;
 
@@ -1581,9 +1402,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navigateTo('planner');
 
         const destSelect = document.getElementById('plannerDest');
-        if (destSelect && destId) {
-            destSelect.value = destId;
-        }
+        if (destSelect && destId) destSelect.value = destId;
 
         if (budgetVal) {
             const bInput = document.getElementById('plannerBudget');
@@ -1620,67 +1439,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const styleMultipliers = { budget: 0.78, balanced: 1.0, comfort: 1.3, premium: 1.8 };
         const multiplier = styleMultipliers[styleSelect] || 1.0;
 
-        const activeInterests = Array.from(document.querySelectorAll('.interest-chip.active')).map(b => b.getAttribute('data-interest'));
-
         let destObj = DESTINATIONS.find(d => d.id === destSelect.value) || DESTINATIONS[0];
 
         const transportTotal = destObj.transportCost * travellers;
         const stayTotal = Math.round(destObj.stayCostPerDay * days * travellers * multiplier);
-        
-        const foodMult = activeInterests.includes('food') ? 1.2 : 1.0;
-        const foodTotal = Math.round(destObj.foodCostPerDay * days * travellers * multiplier * foodMult);
-
-        const actMult = activeInterests.includes('adventure') || activeInterests.includes('culture') ? 1.2 : 1.0;
-        const activityTotal = Math.round(destObj.activityCostPerDay * days * travellers * multiplier * actMult);
-
+        const foodTotal = Math.round(destObj.foodCostPerDay * days * travellers * multiplier);
+        const activityTotal = Math.round(destObj.activityCostPerDay * days * travellers * multiplier);
         const bufferTotal = Math.round((stayTotal + foodTotal + activityTotal) * 0.08);
 
         const totalEstimatedCost = transportTotal + stayTotal + foodTotal + activityTotal + bufferTotal;
         const perPersonCost = Math.round(totalEstimatedCost / travellers);
         const perDayCost = Math.round(totalEstimatedCost / days);
-        const budgetPercentage = Math.round((totalEstimatedCost / budgetInput) * 100);
         const isWithin = totalEstimatedCost <= budgetInput;
 
         activePlanCalculation = {
             destId: destObj.id,
             destinationName: `${destObj.name}, ${destObj.country}`,
             image: destObj.image,
-            travellers,
-            days,
-            style: styleSelect.charAt(0).toUpperCase() + styleSelect.slice(1),
-            styleKey: styleSelect,
-            budget: budgetInput,
-            totalCost: totalEstimatedCost,
-            perPerson: perPersonCost,
-            perDay: perDayCost,
-            transportCost: transportTotal,
-            stayCost: stayTotal,
-            foodCost: foodTotal,
-            activityCost: activityTotal,
-            bufferCost: bufferTotal,
-            budgetPercentage,
-            isWithin
+            travellers, days, style: styleSelect.charAt(0).toUpperCase() + styleSelect.slice(1),
+            budget: budgetInput, totalCost: totalEstimatedCost, perPerson: perPersonCost, perDay: perDayCost,
+            transportCost: transportTotal, stayCost: stayTotal, foodCost: foodTotal, activityCost: activityTotal, bufferCost: bufferTotal, isWithin
         };
 
-        // Update Results UI
         const resultSection = document.getElementById('plannerResultSection');
         if (resultSection) resultSection.classList.remove('hidden');
 
         document.getElementById('planResultTitle').textContent = `${destObj.name}, ${destObj.country}`;
         document.getElementById('planResultMeta').textContent = `${days} DAYS · ${travellers} TRAVELLERS · ${activePlanCalculation.style} STYLE`;
 
-        const matchBadge = document.getElementById('planMatchBadge');
-        if (matchBadge) matchBadge.textContent = `${destObj.match}% MATCH`;
-
         const healthBadge = document.getElementById('planHealthStatus');
         if (healthBadge) {
-            if (isWithin) {
-                healthBadge.className = 'health-status within';
-                healthBadge.textContent = '✓ HEALTHY BUDGET';
-            } else {
-                healthBadge.className = 'health-status over';
-                healthBadge.textContent = `⚠ OVER BUDGET (+${formatINR(totalEstimatedCost - budgetInput)})`;
-            }
+            healthBadge.className = isWithin ? 'health-status within' : 'health-status over';
+            healthBadge.textContent = isWithin ? '✓ HEALTHY BUDGET' : `⚠ OVER BUDGET (+${formatINR(totalEstimatedCost - budgetInput)})`;
         }
 
         document.getElementById('planTotalCost').textContent = formatINR(totalEstimatedCost);
@@ -1693,67 +1483,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('planActivityCost').textContent = formatINR(activityTotal);
         document.getElementById('planBufferCost').textContent = formatINR(bufferTotal);
 
-        const progressFill = document.getElementById('planProgressFill');
-        if (progressFill) {
-            progressFill.style.width = `${Math.min(100, budgetPercentage)}%`;
-            progressFill.style.background = isWithin ? 'linear-gradient(90deg, var(--accent-cyan), var(--accent-orange))' : '#FF4444';
-        }
-
-        // Render Budget Optimizer Suggestions
-        renderCostOptimizer(totalEstimatedCost, budgetInput, days);
-
-        // Render Interactive Day-by-Day Itinerary Builder
         renderItineraryTimeline(days, destObj);
-
-        if (showToastNotice) {
-            showToast(`Calculated itinerary for ${destObj.name}!`);
-        }
-    };
-
-    function renderCostOptimizer(currentTotal, budgetInput, days) {
-        const box = document.getElementById('costOptimizerBox');
-        if (!box) return;
-
-        if (currentTotal <= budgetInput) {
-            box.style.display = 'none';
-            return;
-        }
-
-        box.style.display = 'block';
-        const excess = currentTotal - budgetInput;
-
-        box.innerHTML = `
-            <div class="optimizer-card">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                    <h4 style="font-family:var(--font-heading); color:var(--accent-gold); font-size:14px;">💡 MAKE MY TRIP CHEAPER (SAVE ~${formatINR(excess)})</h4>
-                </div>
-                <p style="color:var(--text-muted); font-size:12px; margin-bottom:12px;">Your trip exceeds target budget by ${formatINR(excess)}. Try these instant smart adjustments:</p>
-                
-                <div class="opt-row">
-                    <span>Switch accommodation style to Budget</span>
-                    <strong style="color:var(--accent-gold);">Save ~${formatINR(Math.round(currentTotal * 0.18))}</strong>
-                    <button type="button" class="opt-btn" onclick="applyOptimizerAction('style', 'budget')">Apply</button>
-                </div>
-                ${days > 2 ? `
-                    <div class="opt-row">
-                        <span>Reduce trip duration by 1 day (${days - 1} days)</span>
-                        <strong style="color:var(--accent-gold);">Save ~${formatINR(Math.round(currentTotal / days))}</strong>
-                        <button type="button" class="opt-btn" onclick="applyOptimizerAction('days', ${days - 1})">Apply</button>
-                    </div>
-                ` : ''}
-            </div>
-        `;
-    }
-
-    window.applyOptimizerAction = function(type, val) {
-        if (type === 'style') {
-            const styleSelect = document.getElementById('plannerStyle');
-            if (styleSelect) styleSelect.value = val;
-        } else if (type === 'days') {
-            const daysInput = document.getElementById('plannerDays');
-            if (daysInput) daysInput.value = val;
-        }
-        calculateTrip(true);
+        if (showToastNotice) showToast(`Calculated itinerary for ${destObj.name}!`);
     };
 
     function renderItineraryTimeline(days, dest) {
@@ -1781,34 +1512,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="timeline-flow">
                         <div class="timeline-item">
                             <span class="timeline-time">09:00 AM</span>
-                            <div class="timeline-content">
-                                <strong>Arrival & Hotel Check-in</strong>
-                                <small>Hotel / Resort check-in and breakfast</small>
-                            </div>
+                            <div class="timeline-content"><strong>Arrival & Check-in</strong><small>Hotel / Resort check-in</small></div>
                         </div>
-
                         <div class="timeline-item">
-                            <span class="timeline-time">12:30 PM</span>
-                            <div class="timeline-content">
-                                <strong>Authentic Local Lunch</strong>
-                                <small>${dest.foodHighlights[d % dest.foodHighlights.length] || 'Regional Specialities'}</small>
-                            </div>
+                            <span class="timeline-time">01:00 PM</span>
+                            <div class="timeline-content"><strong>Local Lunch</strong><small>${dest.foodHighlights[d % dest.foodHighlights.length] || 'Regional Cuisine'}</small></div>
                         </div>
-
                         <div class="timeline-item">
-                            <span class="timeline-time">03:30 PM</span>
-                            <div class="timeline-content">
-                                <strong>${dest.topExperiences[(d - 1) % dest.topExperiences.length] || 'Sightseeing Tour'}</strong>
-                                <small>Guided exploration & photography</small>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <span class="timeline-time">07:30 PM</span>
-                            <div class="timeline-content">
-                                <strong>Sunset Lounge & Dinner</strong>
-                                <small>Relaxation and evening atmosphere</small>
-                            </div>
+                            <span class="timeline-time">04:30 PM</span>
+                            <div class="timeline-content"><strong>${dest.topExperiences[(d - 1) % dest.topExperiences.length] || 'Sightseeing Tour'}</strong><small>Guided photography walk</small></div>
                         </div>
                     </div>
                 </div>
@@ -1822,6 +1534,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.saveTripFromPlanner = function() {
         if (!activePlanCalculation) {
             showToast('Please calculate a trip first!');
+            return;
+        }
+
+        if (!isLoggedIn()) {
+            showToast('Please log in or register to save trips!');
+            navigateTo('login');
             return;
         }
 
@@ -1841,7 +1559,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /* ---------------------------------------------------------
-       13. BUDGET PAGE (#page-budget) FINANCIAL DASHBOARD
+       14. BUDGET DASHBOARD & EXPENSE TRACKER
     --------------------------------------------------------- */
     function renderBudgetDashboard() {
         const totalBudgetVal = parseInt(document.getElementById('budgetsTotalInput')?.value, 10) || 50000;
@@ -1859,31 +1577,13 @@ document.addEventListener('DOMContentLoaded', () => {
             healthTag.textContent = isHealthy ? '✓ HEALTHY' : '⚠ OVER BUDGET';
         }
 
-        // SVG / CSS Visual Allocation Breakdown
-        const allocStay = Math.round(totalBudgetVal * 0.35);
-        const allocTransport = Math.round(totalBudgetVal * 0.25);
-        const allocFood = Math.round(totalBudgetVal * 0.20);
-        const allocAct = Math.round(totalBudgetVal * 0.12);
-        const allocBuffer = Math.round(totalBudgetVal * 0.08);
-
-        document.getElementById('allocStayVal').textContent = formatINR(allocStay);
-        document.getElementById('allocTransportVal').textContent = formatINR(allocTransport);
-        document.getElementById('allocFoodVal').textContent = formatINR(allocFood);
-        document.getElementById('allocActVal').textContent = formatINR(allocAct);
-        document.getElementById('allocBufferVal').textContent = formatINR(allocBuffer);
-
         renderExpenseTrackerList();
     }
-
-    window.updateBudgetRecalculation = function() {
-        renderBudgetDashboard();
-    };
 
     window.addExpenseItem = function() {
         const title = document.getElementById('expTitleInput')?.value.trim();
         const cat = document.getElementById('expCatSelect')?.value || 'Food';
         const amount = parseInt(document.getElementById('expAmountInput')?.value, 10) || 0;
-        const note = document.getElementById('expNoteInput')?.value.trim() || '';
 
         if (!title || amount <= 0) {
             showToast('Please enter valid expense title and amount!');
@@ -1891,21 +1591,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const newExp = {
-            id: Date.now(),
-            title,
-            category: cat,
-            amount,
-            date: new Date().toISOString().split('T')[0],
-            note
+            id: Date.now(), title, category: cat, amount, date: new Date().toISOString().split('T')[0]
         };
 
         expenses.unshift(newExp);
         saveData('wanderly_expenses', expenses);
 
-        // Clear inputs
         document.getElementById('expTitleInput').value = '';
         document.getElementById('expAmountInput').value = '';
-        if (document.getElementById('expNoteInput')) document.getElementById('expNoteInput').value = '';
 
         showToast(`Added expense: ${title} (${formatINR(amount)})`);
         renderExpenseTrackerList();
@@ -1915,7 +1608,6 @@ document.addEventListener('DOMContentLoaded', () => {
         expenses = expenses.filter(e => e.id !== id);
         saveData('wanderly_expenses', expenses);
         renderExpenseTrackerList();
-        showToast('Expense removed');
     };
 
     function renderExpenseTrackerList() {
@@ -1926,16 +1618,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalSpent = expenses.reduce((acc, e) => acc + e.amount, 0);
         if (totalSpentEl) totalSpentEl.textContent = formatINR(totalSpent);
 
-        if (expenses.length === 0) {
-            container.innerHTML = `<div style="padding:20px; color:var(--text-muted); text-align:center;">No expenses added yet.</div>`;
-            return;
-        }
-
         container.innerHTML = expenses.map(exp => `
             <div class="expense-row">
                 <div>
                     <strong style="font-family:var(--font-heading); color:var(--text-white); font-size:14px; display:block;">${exp.title}</strong>
-                    <small style="color:var(--text-muted); font-size:11px;">${exp.category} · ${exp.date} ${exp.note ? '· ' + exp.note : ''}</small>
+                    <small style="color:var(--text-muted); font-size:11px;">${exp.category} · ${exp.date}</small>
                 </div>
                 <div style="display:flex; align-items:center; gap:12px;">
                     <strong style="color:var(--accent-orange); font-family:var(--font-heading);">${formatINR(exp.amount)}</strong>
@@ -1946,22 +1633,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ---------------------------------------------------------
-       14. MY TRIPS PAGE (#page-trips) PERSONAL COMMAND CENTER
+       15. MY TRIPS PAGE (#page-trips)
     --------------------------------------------------------- */
     function renderMyTripsPage() {
-        // Nav Badge
-        const navBadge = document.getElementById('navTripBadge');
-        if (navBadge) navBadge.textContent = savedTrips.length;
-
-        // Stats
-        document.getElementById('statTotalTrips').textContent = savedTrips.length;
-        document.getElementById('statUpcomingTrips').textContent = savedTrips.filter(t => t.status === 'READY' || t.status === 'PLANNING').length;
-        document.getElementById('statCompletedTrips').textContent = savedTrips.filter(t => t.status === 'COMPLETED').length;
-
-        const totalPlannedCost = savedTrips.reduce((acc, t) => acc + (t.totalCost || 0), 0);
-        document.getElementById('statTotalSpend').textContent = formatINR(totalPlannedCost);
-
-        // Saved Trip Postcards Grid
         const grid = document.getElementById('savedTripsGrid');
         if (!grid) return;
 
@@ -1987,7 +1661,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span style="font-size:11px; background:rgba(77,231,255,0.1); color:var(--accent-cyan); padding:2px 8px; border-radius:var(--radius-sm); font-weight:700;">${trip.style}</span>
                         </div>
                         <p style="color:var(--text-muted); font-size:12px; margin-bottom:12px;">${trip.days} Days · ${trip.travellers} Travellers · Saved ${trip.dateSaved}</p>
-                        
                         <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-subtle); padding-top:12px; margin-top:12px;">
                             <div>
                                 <small style="font-size:10px; color:var(--text-muted); display:block; font-weight:700;">EST. TOTAL</small>
@@ -2002,9 +1675,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </article>
             `).join('');
         }
-
-        renderChecklistAndPackingLists();
-        renderFavoritesAndRecent();
     }
 
     window.openTripDetailDashboard = function(tripId) {
@@ -2019,29 +1689,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="country-tag">TRIP COMMAND CENTER DASHBOARD</span>
             <h2 style="font-family:var(--font-heading); font-size:30px; color:var(--text-white); margin-top:4px; margin-bottom:6px;">${trip.destinationName}</h2>
             <p style="color:var(--text-muted); font-size:13px; margin-bottom:20px;">${trip.days} Days · ${trip.travellers} Travellers · ${trip.style} Style</p>
-
-            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:20px; background:var(--bg-midnight); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); text-align:center;">
-                <div><small style="color:var(--text-muted); font-size:10px; display:block;">EST. COST</small><strong style="color:var(--accent-cyan); font-family:var(--font-heading); font-size:16px;">${formatINR(trip.totalCost)}</strong></div>
-                <div><small style="color:var(--text-muted); font-size:10px; display:block;">PER PERSON</small><strong style="color:var(--accent-orange); font-family:var(--font-heading); font-size:16px;">${formatINR(trip.perPerson)}</strong></div>
-                <div><small style="color:var(--text-muted); font-size:10px; display:block;">PER DAY</small><strong style="color:var(--text-white); font-family:var(--font-heading); font-size:16px;">${formatINR(trip.perDay)}</strong></div>
-            </div>
-
-            <!-- LIVE COUNTDOWN TIMER -->
-            <div style="background:var(--bg-deep-ocean); border:1px solid var(--border-glow); padding:16px; border-radius:var(--radius-md); text-align:center; margin-bottom:24px;">
-                <small style="color:var(--accent-gold); font-weight:700; letter-spacing:1px; font-size:11px; display:block; margin-bottom:6px;">COUNTDOWN UNTIL DEPARTURE</small>
-                <div style="font-family:var(--font-heading); font-size:24px; color:var(--text-white); font-weight:700;">
-                    12 <span style="font-size:13px; color:var(--text-muted);">DAYS</span> 
-                    08 <span style="font-size:13px; color:var(--text-muted);">HOURS</span> 
-                    34 <span style="font-size:13px; color:var(--text-muted);">MINS</span>
-                </div>
-            </div>
-
             <div style="display:flex; justify-content:flex-end; gap:10px;">
                 <button type="button" class="outline-btn" onclick="closeUniversalModal()">Close</button>
                 <button type="button" class="primary-btn" onclick="closeUniversalModal(); planDestination('${trip.destId}')">Edit Itinerary ↗</button>
             </div>
         `;
-
         backdrop.classList.add('open');
     };
 
@@ -2052,95 +1704,12 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast('Trip removed');
     };
 
-    // Checklist & Packing List Rendering
-    function renderChecklistAndPackingLists() {
-        const container = document.getElementById('checklistContainer');
-        if (!container) return;
-
-        const doneCheck = checklist.filter(c => c.done).length;
-        const totalCheck = checklist.length || 1;
-        const readinessScore = Math.round((doneCheck / totalCheck) * 100);
-
-        container.innerHTML = `
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-                <h3 style="font-family:var(--font-heading); font-size:18px; color:var(--text-white);">PRE-DEPARTURE CHECKLIST</h3>
-                <span class="match-badge high">${readinessScore}% READINESS</span>
-            </div>
-
-            ${checklist.map(item => `
-                <div class="check-item ${item.done ? 'done' : ''}">
-                    <input type="checkbox" ${item.done ? 'checked' : ''} onchange="toggleChecklistItem(${item.id})">
-                    <span>[${item.category}] ${item.title}</span>
-                </div>
-            `).join('')}
-
-            <div style="display:flex; justify-content:space-between; align-items:center; margin:24px 0 16px;">
-                <h3 style="font-family:var(--font-heading); font-size:18px; color:var(--text-white);">SMART PACKING LIST</h3>
-                <button type="button" class="text-btn" onclick="addCustomPackingItem()">+ Add Item</button>
-            </div>
-
-            ${packingList.map(item => `
-                <div class="check-item ${item.done ? 'done' : ''}">
-                    <input type="checkbox" ${item.done ? 'checked' : ''} onchange="togglePackingListItem(${item.id})">
-                    <span>${item.title}</span>
-                </div>
-            `).join('')}
-        `;
-    }
-
-    window.toggleChecklistItem = function(id) {
-        checklist = checklist.map(c => c.id === id ? { ...c, done: !c.done } : c);
-        saveData('wanderly_checklist', checklist);
-        renderMyTripsPage();
-    };
-
-    window.togglePackingListItem = function(id) {
-        packingList = packingList.map(p => p.id === id ? { ...p, done: !p.done } : p);
-        saveData('wanderly_packing', packingList);
-        renderMyTripsPage();
-    };
-
-    window.addCustomPackingItem = function() {
-        const title = prompt("Enter new packing item title:");
-        if (title && title.trim()) {
-            packingList.push({ id: Date.now(), title: title.trim(), done: false });
-            saveData('wanderly_packing', packingList);
-            renderMyTripsPage();
-            showToast('Packing item added!');
-        }
-    };
-
-    // Favorites & Recently Viewed render
-    function renderFavoritesAndRecent() {
-        const favContainer = document.getElementById('favoritesContainer');
-        if (favContainer) {
-            const favDests = DESTINATIONS.filter(d => favorites.includes(d.id));
-            if (favDests.length === 0) {
-                favContainer.innerHTML = `<div style="padding:16px; color:var(--text-muted); font-size:13px;">No saved favorites yet. Click ♥ on any destination card to save it here.</div>`;
-            } else {
-                favContainer.innerHTML = favDests.map(d => `
-                    <div style="background:var(--bg-deep-ocean); border:1px solid var(--border-subtle); padding:12px; border-radius:var(--radius-md); display:flex; justify-content:space-between; align-items:center;">
-                        <div style="display:flex; gap:12px; align-items:center;">
-                            <img src="${d.image}" style="width:48px; height:48px; border-radius:8px; object-fit:cover;" alt="${d.name}">
-                            <div>
-                                <strong style="font-family:var(--font-heading); color:var(--text-white); font-size:14px; display:block;">${d.name}, ${d.country}</strong>
-                                <small style="color:var(--text-muted); font-size:11px;">${d.budgetRange}</small>
-                            </div>
-                        </div>
-                        <button type="button" class="primary-btn" style="padding:6px 12px; font-size:12px;" onclick="planDestination('${d.id}')">Plan ↗</button>
-                    </div>
-                `).join('');
-            }
-        }
-    }
-
     /* ---------------------------------------------------------
-       15. GUIDES PAGE (#page-guides) EDITORIAL KNOWLEDGE CENTER
+       16. GUIDES PAGE (#page-guides)
     --------------------------------------------------------- */
     function renderGuidesPage() {
         const grid = document.getElementById('guidesGrid');
         if (!grid) return;
-
         filterAndRenderGuides('All');
     }
 
@@ -2154,9 +1723,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!grid) return;
 
         let list = GUIDES_DATA;
-        if (cat !== 'All') {
-            list = GUIDES_DATA.filter(g => g.category.toLowerCase() === cat.toLowerCase());
-        }
+        if (cat !== 'All') list = GUIDES_DATA.filter(g => g.category.toLowerCase() === cat.toLowerCase());
 
         grid.innerHTML = list.map(g => `
             <article class="guide-card" onclick="openGuideModal('${g.key}')">
@@ -2184,22 +1751,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         body.innerHTML = `
             <span class="guide-badge" style="display:inline-block; margin-bottom:12px;">${guide.badge}</span>
-            <small style="display:block; color:var(--accent-cyan); font-weight:700; font-size:12px; margin-bottom:8px;">${guide.category.toUpperCase()} · ${guide.readTime}</small>
             <h2 style="font-family:var(--font-heading); font-size:26px; line-height:1.3; margin-bottom:16px; color:var(--text-white);">${guide.title}</h2>
-            
-            <div style="height:220px; border-radius:var(--radius-md); overflow:hidden; margin-bottom:20px;">
-                <img src="${guide.image}" alt="${guide.title}" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-
-            <div style="font-size:14px; color:var(--text-muted); line-height:1.8;">
-                ${guide.content}
-            </div>
-
+            <div style="font-size:14px; color:var(--text-muted); line-height:1.8;">${guide.content}</div>
             <div style="display:flex; justify-content:flex-end; margin-top:24px;">
                 <button type="button" class="outline-btn" onclick="closeUniversalModal()">Close Article</button>
             </div>
         `;
-
         backdrop.classList.add('open');
     };
 
@@ -2209,37 +1766,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /* ---------------------------------------------------------
-       16. KEYBOARD EVENT LISTENERS (ESC TO CLOSE MODALS & SEARCH)
-    --------------------------------------------------------- */
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeDestModal();
-            closeUniversalModal();
-            const overlay = document.getElementById('globalSearchOverlay');
-            if (overlay) overlay.classList.remove('open');
-        }
-        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-            e.preventDefault();
-            toggleSearchOverlay();
-        }
-    });
-
-    /* ---------------------------------------------------------
        17. INITIAL BOOTSTRAP ENGINE
     --------------------------------------------------------- */
-    renderHomePage();
-    renderDiscoverPage();
-    renderDestinationsPage();
-    renderBudgetDashboard();
-    renderMyTripsPage();
-    renderGuidesPage();
-
-    // Check initial route hash
     const initialHash = window.location.hash.replace('#', '').trim();
     if (initialHash && VALID_PAGES.includes(initialHash)) {
         navigateTo(initialHash, false);
     } else {
-        navigateTo('home', false);
+        navigateTo('landing', false);
     }
-
 });
