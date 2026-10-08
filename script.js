@@ -1,14 +1,14 @@
 /* =========================================================
-   WANDERLY — Multi-Page Application Engine
-   Features: Shared Nav/Footer Badge, URL Query Parameter Routing,
-   Interactive Planner, Budget Widget, LocalStorage Trips,
-   Destination Directory & Detail Modal, Guide Articles & Toasts
+   WANDERLY — Single-Page Application (SPA) Engine
+   Theme: SUNSET JOURNEY (Midnight Navy, Deep Ocean, Electric Cyan, Sunset Orange)
+   Features: Hash-based Virtual Router, History API, Live Trip Planner,
+   Budget Calculator Dashboard, LocalStorage Trip Saving, Modal System
 ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------------------------------------------------------
-       1. DESTINATION DATASET (MULTI-REGION & CATEGORIES)
+       1. DESTINATION DATASET
     --------------------------------------------------------- */
     const DESTINATIONS = [
         {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'India',
             region: 'India',
             categories: 'Beach · Food · Nightlife',
-            image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=85',
             transportCost: 3500,
             stayCostPerDay: 2200,
             foodCostPerDay: 1000,
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'India',
             region: 'India',
             categories: 'Mountains · Tea · Nature',
-            image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1200&q=85',
             transportCost: 3000,
             stayCostPerDay: 1800,
             foodCostPerDay: 800,
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'India',
             region: 'India',
             categories: 'Heritage · Culture · Palaces',
-            image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=85',
             transportCost: 2800,
             stayCostPerDay: 2000,
             foodCostPerDay: 900,
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'Indonesia',
             region: 'Asia',
             categories: 'Beaches · Culture · Adventure',
-            image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85',
             transportCost: 16000,
             stayCostPerDay: 2800,
             foodCostPerDay: 1200,
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'UAE',
             region: 'Middle East',
             categories: 'Futuristic · Shopping · Desert',
-            image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85',
             transportCost: 18000,
             stayCostPerDay: 6500,
             foodCostPerDay: 2500,
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'Japan',
             region: 'Asia',
             categories: 'Culture · Food · History',
-            image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=85',
             transportCost: 38000,
             stayCostPerDay: 7000,
             foodCostPerDay: 3000,
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'Maldives',
             region: 'Asia',
             categories: 'Ocean · Relaxation · Luxury',
-            image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85',
             transportCost: 22000,
             stayCostPerDay: 12000,
             foodCostPerDay: 4000,
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'Switzerland',
             region: 'Europe',
             categories: 'Mountains · Lakes · Snow',
-            image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=85',
             transportCost: 55000,
             stayCostPerDay: 11000,
             foodCostPerDay: 4500,
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'Singapore',
             region: 'Asia',
             categories: 'City · Food · Family',
-            image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=85',
             transportCost: 22000,
             stayCostPerDay: 7500,
             foodCostPerDay: 2800,
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             country: 'Thailand',
             region: 'Asia',
             categories: 'City · Food · Culture',
-            image: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85',
+            image: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=85',
             transportCost: 14000,
             stayCostPerDay: 2500,
             foodCostPerDay: 1000,
@@ -172,7 +172,81 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ---------------------------------------------------------
-       3. LOCALSTORAGE SAVED TRIPS
+       3. VIRTUAL SPA ROUTER & NAVIGATION ENGINE
+    --------------------------------------------------------- */
+    const VALID_PAGES = ['home', 'discover', 'destinations', 'planner', 'budget', 'trips', 'guides', 'about'];
+    let currentPage = 'home';
+
+    window.navigateTo = function(pageId, pushToHistory = true) {
+        if (!VALID_PAGES.includes(pageId)) pageId = 'home';
+
+        // 1. Hide active page
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(p => p.classList.remove('active'));
+
+        // 2. Show target page
+        const targetPage = document.getElementById(`page-${pageId}`);
+        if (targetPage) {
+            targetPage.classList.add('active');
+        }
+
+        currentPage = pageId;
+
+        // 3. Update Navbar Links active state
+        document.querySelectorAll('[data-page]').forEach(link => {
+            if (link.getAttribute('data-page') === pageId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // 4. Update URL Hash / History
+        if (pushToHistory) {
+            history.pushState({ page: pageId }, '', `#${pageId}`);
+        }
+
+        // 5. Scroll smoothly to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // 6. Close mobile menu if open
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenu) mobileMenu.classList.remove('open');
+
+        // 7. Refresh page-specific components
+        if (pageId === 'trips') updateSavedTripsUI();
+        if (pageId === 'destinations') initDestinationsPage();
+        if (pageId === 'discover') initDiscoverPage();
+    };
+
+    // Handle initial route loading and browser back/forward buttons
+    function handleInitialRoute() {
+        const hash = window.location.hash.replace('#', '').trim();
+        if (hash && VALID_PAGES.includes(hash)) {
+            navigateTo(hash, false);
+        } else {
+            navigateTo('home', false);
+        }
+    }
+
+    window.addEventListener('popstate', (e) => {
+        const page = (e.state && e.state.page) ? e.state.page : window.location.hash.replace('#', '').trim();
+        if (page && VALID_PAGES.includes(page)) {
+            navigateTo(page, false);
+        } else {
+            navigateTo('home', false);
+        }
+    });
+
+    window.addEventListener('hashchange', () => {
+        const hash = window.location.hash.replace('#', '').trim();
+        if (hash && VALID_PAGES.includes(hash) && hash !== currentPage) {
+            navigateTo(hash, false);
+        }
+    });
+
+    /* ---------------------------------------------------------
+       4. LOCALSTORAGE SAVED TRIPS & BADGES
     --------------------------------------------------------- */
     let currentCalculation = null;
 
@@ -197,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ---------------------------------------------------------
-       4. MOBILE MENU & GLOBAL CONTROLS
+       5. GLOBAL CONTROLS & TOAST NOTIFICATION
     --------------------------------------------------------- */
     window.toggleMobileMenu = function() {
         const menu = document.getElementById('mobileMenu');
@@ -213,14 +287,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /* ---------------------------------------------------------
-       5. HOME PAGE FEATURED GRID
+       6. HOME PAGE FEATURED GRID & DESTINATION CARD CLICK
     --------------------------------------------------------- */
     function initHomePage() {
         const grid = document.getElementById('homeFeaturedGrid');
         if (!grid) return;
 
         grid.innerHTML = DESTINATIONS.slice(0, 4).map((dest, idx) => `
-            <article class="destination-card ${idx === 0 ? 'large' : ''}" onclick="window.location.href='planner.html?dest=${dest.id}'">
+            <article class="destination-card ${idx === 0 ? 'large' : ''}" onclick="planDestination('${dest.id}')">
                 <img src="${dest.image}" alt="${dest.name}, ${dest.country}">
                 <div class="destination-overlay">
                     <div>
@@ -235,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ---------------------------------------------------------
-       6. DISCOVER PAGE SEARCH & GRIDS
+       7. DISCOVER PAGE SEARCH & CATEGORY GRIDS
     --------------------------------------------------------- */
     function initDiscoverPage() {
         const trendingGrid = document.getElementById('trendingGrid');
@@ -261,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createDiscoverCardHTML(dest) {
         return `
-            <article class="destination-card" onclick="window.location.href='planner.html?dest=${dest.id}'">
+            <article class="destination-card" onclick="planDestination('${dest.id}')">
                 <img src="${dest.image}" alt="${dest.name}">
                 <div class="destination-overlay">
                     <div>
@@ -280,32 +354,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const budgetVal = document.getElementById('discoverBudget').value;
         const styleVal = document.getElementById('discoverStyle').value;
 
-        let query = [];
         if (searchVal) {
             const match = DESTINATIONS.find(d => d.name.toLowerCase().includes(searchVal) || d.country.toLowerCase().includes(searchVal));
-            if (match) query.push(`dest=${match.id}`);
+            if (match) {
+                planDestination(match.id, budgetVal, styleVal);
+                return;
+            }
         }
-        if (budgetVal) query.push(`budget=${budgetVal}`);
-        if (styleVal) query.push(`style=${styleVal}`);
 
-        window.location.href = `planner.html${query.length ? '?' + query.join('&') : ''}`;
+        navigateTo('planner');
+        if (budgetVal) {
+            const budgetInput = document.getElementById('budget');
+            if (budgetInput) budgetInput.value = budgetVal;
+        }
+        if (styleVal) {
+            const styleSelect = document.getElementById('travelStyle');
+            if (styleSelect) styleSelect.value = styleVal;
+        }
+        calculateTrip(false);
     };
 
     /* ---------------------------------------------------------
-       7. DESTINATIONS DIRECTORY & DETAIL MODAL
+       8. DESTINATIONS DIRECTORY & DETAIL MODAL
     --------------------------------------------------------- */
     function initDestinationsPage() {
         const grid = document.getElementById('directoryGrid');
         if (!grid) return;
 
         renderDirectoryCards(DESTINATIONS);
-
-        // Auto open detail modal if URL parameter ?selected=id exists
-        const params = new URLSearchParams(window.location.search);
-        const selectedId = params.get('selected');
-        if (selectedId) {
-            openDestModal(selectedId);
-        }
     }
 
     function renderDirectoryCards(list) {
@@ -329,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <div class="directory-footer">
                         <button type="button" class="text-btn" onclick="openDestModal('${dest.id}')">Explore details →</button>
-                        <a href="planner.html?dest=${dest.id}" class="primary-btn" style="padding:10px 16px; font-size:13px;">Plan Trip ↗</a>
+                        <button type="button" class="primary-btn" style="padding:10px 16px; font-size:13px;" onclick="planDestination('${dest.id}')">Plan Trip ↗</button>
                     </div>
                 </div>
             </article>
@@ -337,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.filterDestinations = function(category, btn) {
-        document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('#page-destinations .filter-pill').forEach(b => b.classList.remove('active'));
         if (btn) btn.classList.add('active');
 
         if (category === 'All') {
@@ -366,37 +442,61 @@ document.addEventListener('DOMContentLoaded', () => {
             <div style="height:240px; border-radius:16px; overflow:hidden; margin-bottom:20px;">
                 <img src="${dest.image}" alt="${dest.name}" style="width:100%; height:100%; object-fit:cover;">
             </div>
-            <span class="country-tag" style="color:var(--terracotta); font-weight:800; font-size:11px; letter-spacing:1px; text-transform:uppercase;">${dest.country}</span>
-            <h2 style="font-family:var(--display); font-size:32px; margin-bottom:8px;">${dest.name}</h2>
-            <p style="color:var(--muted); font-size:14px; margin-bottom:20px;">${dest.bestFor}</p>
+            <span class="country-tag">${dest.country}</span>
+            <h2 style="font-family:var(--font-heading); font-size:32px; margin-bottom:8px; color:var(--text-main);">${dest.name}</h2>
+            <p style="color:var(--text-muted); font-size:14px; margin-bottom:20px; line-height:1.6;">${dest.bestFor}</p>
 
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; background:var(--ivory); padding:18px; border-radius:14px; border:1px solid var(--line);">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; background:var(--bg-dark); padding:18px; border-radius:14px; border:1px solid var(--border-subtle);">
                 <div>
-                    <small style="color:var(--muted); font-size:11px; text-transform:uppercase; font-weight:700;">Best Time to Visit</small>
-                    <strong style="display:block; font-size:14px; margin-top:2px;">${dest.bestTime}</strong>
+                    <small style="color:var(--text-muted); font-size:11px; text-transform:uppercase; font-weight:700; letter-spacing:1px; display:block;">Best Time to Visit</small>
+                    <strong style="display:block; font-size:14px; margin-top:4px; color:var(--text-main); font-family:var(--font-heading);">${dest.bestTime}</strong>
                 </div>
                 <div>
-                    <small style="color:var(--muted); font-size:11px; text-transform:uppercase; font-weight:700;">Estimated Budget</small>
-                    <strong style="display:block; font-size:14px; margin-top:2px; color:var(--terracotta);">${dest.budgetRange}</strong>
+                    <small style="color:var(--text-muted); font-size:11px; text-transform:uppercase; font-weight:700; letter-spacing:1px; display:block;">Estimated Budget</small>
+                    <strong style="display:block; font-size:14px; margin-top:4px; color:var(--accent-orange); font-family:var(--font-heading);">${dest.budgetRange}</strong>
                 </div>
             </div>
 
             <div style="display:flex; justify-content:flex-end; gap:12px;">
                 <button type="button" class="outline-btn" onclick="closeDestModal()">Close</button>
-                <a href="planner.html?dest=${dest.id}" class="primary-btn">Plan this trip ↗</a>
+                <button type="button" class="primary-btn" onclick="closeDestModal(); planDestination('${dest.id}')">Plan this trip ↗</button>
             </div>
         `;
 
         backdrop.classList.add('open');
     };
 
-    window.closeDestModal = function(e) {
+    window.closeDestModal = function() {
         const backdrop = document.getElementById('destModalBackdrop');
         if (backdrop) backdrop.classList.remove('open');
     };
 
     /* ---------------------------------------------------------
-       8. SMART TRIP PLANNER ENGINE
+       9. CROSS-PAGE PLANNER INITIALIZER
+    --------------------------------------------------------- */
+    window.planDestination = function(destId, budgetVal = null, styleVal = null) {
+        navigateTo('planner');
+
+        const destSelect = document.getElementById('destination');
+        if (destSelect && destId) {
+            destSelect.value = destId;
+        }
+
+        if (budgetVal) {
+            const budgetInput = document.getElementById('budget');
+            if (budgetInput) budgetInput.value = budgetVal;
+        }
+
+        if (styleVal) {
+            const styleSelect = document.getElementById('travelStyle');
+            if (styleSelect) styleSelect.value = styleVal;
+        }
+
+        calculateTrip(false);
+    };
+
+    /* ---------------------------------------------------------
+       10. SMART TRIP PLANNER ENGINE
     --------------------------------------------------------- */
     window.changeValue = function(fieldId, delta) {
         const input = document.getElementById(fieldId);
@@ -413,37 +513,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.toggle('active');
         if (currentCalculation) calculateTrip(false);
     };
-
-    function initPlannerPage() {
-        const destSelect = document.getElementById('destination');
-        if (!destSelect) return;
-
-        // Auto pre-select from URL params e.g. planner.html?dest=goa&budget=50000
-        const params = new URLSearchParams(window.location.search);
-        const destParam = params.get('dest');
-        const budgetParam = params.get('budget');
-        const styleParam = params.get('style');
-
-        if (destParam) {
-            const match = DESTINATIONS.find(d => d.id === destParam);
-            if (match) destSelect.value = match.id;
-        }
-
-        if (budgetParam) {
-            const budgetInput = document.getElementById('budget');
-            if (budgetInput) budgetInput.value = budgetParam;
-        }
-
-        if (styleParam) {
-            const styleSelect = document.getElementById('travelStyle');
-            if (styleSelect) styleSelect.value = styleParam;
-        }
-
-        // Auto calculate on page load if destination is specified
-        if (destParam || budgetParam) {
-            calculateTrip(false);
-        }
-    }
 
     window.calculateTrip = function(showToastNotice = true) {
         const destSelect = document.getElementById('destination');
@@ -546,15 +615,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const fillBar = document.getElementById('progressFill');
         if (fillBar) {
             fillBar.style.width = `${Math.min(100, budgetPercentage)}%`;
-            fillBar.style.background = isWithin ? 'var(--terracotta)' : '#c5221f';
+            fillBar.style.background = isWithin ? 'linear-gradient(90deg, var(--accent-cyan), var(--accent-orange))' : '#ff4444';
         }
 
         const recEl = document.getElementById('recommendationText');
         if (recEl) {
             if (budgetPercentage < 70) {
-                recEl.textContent = 'Excellent! You have plenty of room for unexpected expenses, shopping, or upgrading your stay.';
+                recEl.textContent = 'Excellent! You have plenty of room for unexpected experiences, shopping, or upgrading your stay.';
             } else if (budgetPercentage <= 90) {
-                recEl.textContent = 'Looks balanced. Keep around 10% aside for unexpected local transit or emergency supplies.';
+                recEl.textContent = 'Your budget leaves enough room for experiences and unexpected expenses.';
             } else if (budgetPercentage <= 100) {
                 recEl.textContent = 'This trip fits, but your budget will be fairly tight during your stay.';
             } else {
@@ -583,10 +652,11 @@ document.addEventListener('DOMContentLoaded', () => {
         trips.unshift(newTrip);
         saveTripsToStorage(trips);
         showToast(`Saved trip to ${currentCalculation.destinationName}! ♡`);
+        navigateTo('trips');
     };
 
     /* ---------------------------------------------------------
-       9. BUDGET CALCULATOR WIDGET (BUDGET.HTML)
+       11. BUDGET CALCULATOR WIDGET (BUDGET VIEW)
     --------------------------------------------------------- */
     function initBudgetWidget() {
         const budgetInput = document.getElementById('widgetBudget');
@@ -618,7 +688,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ---------------------------------------------------------
-       10. MY TRIPS PAGE RENDER (TRIPS.HTML)
+       12. MY TRIPS PAGE RENDER (LOCALSTORAGE PERSISTENCE)
     --------------------------------------------------------- */
     function updateSavedTripsUI() {
         updateNavBadge();
@@ -633,9 +703,9 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML = `
                 <div class="no-trips">
                     <div>✈</div>
-                    <h3>No saved trips yet.</h3>
-                    <p>Build a trip with our smart planner and save it here.</p>
-                    <a href="planner.html" class="outline-btn">Create a trip →</a>
+                    <h3>Your next adventure belongs here.</h3>
+                    <p>Build a trip with our smart planner and save it to your digital postcards.</p>
+                    <button type="button" class="primary-btn" onclick="navigateTo('planner')">Start planning ↗</button>
                 </div>
             `;
             return;
@@ -658,12 +728,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="trip-price-row">
                                 <div>
-                                    <small style="font-size:10px; text-transform:uppercase; color:var(--muted); display:block;">Est. Total</small>
+                                    <small style="font-size:10px; text-transform:uppercase; color:var(--text-muted); display:block; font-family:var(--font-heading);">Est. Total</small>
                                     <strong>${formatINR(trip.totalCost)}</strong>
                                 </div>
                                 <div style="display:flex; gap:10px; align-items:center;">
-                                    <a href="planner.html?dest=${trip.destId}" class="outline-btn" style="padding:6px 12px; font-size:12px;">View</a>
-                                    <button class="remove-btn" onclick="removeTrip('${trip.id}')">Remove</button>
+                                    <button type="button" class="outline-btn" style="padding:6px 12px; font-size:12px;" onclick="planDestination('${trip.destId}')">View trip</button>
+                                    <button type="button" class="remove-btn" onclick="removeTrip('${trip.id}')">Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -681,7 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /* ---------------------------------------------------------
-       11. TRAVEL GUIDES FILTER & MODAL (GUIDES.HTML)
+       13. TRAVEL GUIDES FILTER & MODAL
     --------------------------------------------------------- */
     const GUIDES = {
         international: {
@@ -710,7 +780,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         food: {
             badge: "CULINARY",
-            title: "Eating Like a Local in Global Food Capitals",
+            title: "Best Destinations & Hacks for Culinary Lovers",
             content: `
                 <p>Avoid main plaza tourist cafes with English menus posted outside. Walk two blocks into residential neighborhoods to find long queues of locals.</p>
                 <p>In food capitals like Bangkok, Tokyo, or Jaipur, street hawkers specializing in a single signature dish offer unmatched flavor for under ₹300.</p>
@@ -734,7 +804,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.filterGuides = function(category, btn) {
-        document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('#page-guides .filter-pill').forEach(b => b.classList.remove('active'));
         if (btn) btn.classList.add('active');
 
         const cards = document.querySelectorAll('#guidesGrid .guide-card');
@@ -753,13 +823,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!guide) return;
 
         const backdrop = document.getElementById('guideModalBackdrop');
-        const body = document.getElementById('modalBody');
+        const body = document.getElementById('guideModalBody');
         if (!backdrop || !body) return;
 
         body.innerHTML = `
-            <span class="guide-badge" style="display:inline-block; margin-bottom:8px;">${guide.badge}</span>
-            <h2 style="font-family:var(--display); font-size:28px; line-height:1.2; margin-bottom:16px;">${guide.title}</h2>
-            <div style="font-size:15px; color:var(--muted); line-height:1.8;">
+            <span class="guide-badge" style="display:inline-block; margin-bottom:12px;">${guide.badge}</span>
+            <h2 style="font-family:var(--font-heading); font-size:26px; line-height:1.3; margin-bottom:16px; color:var(--text-main);">${guide.title}</h2>
+            <div style="font-size:15px; color:var(--text-muted); line-height:1.8;">
                 ${guide.content}
             </div>
         `;
@@ -767,7 +837,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backdrop.classList.add('open');
     };
 
-    window.closeGuideModal = function(e) {
+    window.closeGuideModal = function() {
         const backdrop = document.getElementById('guideModalBackdrop');
         if (backdrop) backdrop.classList.remove('open');
     };
@@ -780,13 +850,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ---------------------------------------------------------
-       12. INITIALIZATION ROUTER
+       14. INITIAL ROUTE & ENGINE BOOTSTRAP
     --------------------------------------------------------- */
     updateNavBadge();
     initHomePage();
     initDiscoverPage();
     initDestinationsPage();
-    initPlannerPage();
     initBudgetWidget();
     updateSavedTripsUI();
+
+    handleInitialRoute();
 });

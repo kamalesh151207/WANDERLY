@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WANDERLY — Plan Less. Wander More.</title>
-    <meta name="description" content="Discover destinations, build realistic itineraries, understand your costs and plan your next adventure without the spreadsheet headache.">
+    <meta name="description" content="Discover destinations, build realistic itineraries, understand your costs and plan your next adventure with WANDERLY.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Playfair+Display:ital,wght@0,500..700;1,500..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,23 +17,23 @@
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="nav-inner">
-            <a href="index.html" class="brand">
+            <button type="button" class="brand" onclick="navigateTo('home')">
                 WANDERLY<span>.</span>
-            </a>
+            </button>
 
             <nav class="desktop-nav">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="discover.html" class="nav-link">Discover</a>
-                <a href="destinations.html" class="nav-link">Destinations</a>
-                <a href="planner.html" class="nav-link">Planner</a>
-                <a href="budget.html" class="nav-link">Budget</a>
-                <a href="trips.html" class="nav-link">My Trips <span class="badge-count" id="navTripBadge">0</span></a>
-                <a href="guides.html" class="nav-link">Guides</a>
+                <button type="button" data-page="home" onclick="navigateTo('home')">Home</button>
+                <button type="button" data-page="discover" onclick="navigateTo('discover')">Discover</button>
+                <button type="button" data-page="destinations" onclick="navigateTo('destinations')">Destinations</button>
+                <button type="button" data-page="planner" onclick="navigateTo('planner')">Planner</button>
+                <button type="button" data-page="budget" onclick="navigateTo('budget')">Budget</button>
+                <button type="button" data-page="trips" onclick="navigateTo('trips')">My Trips <span class="badge-count" id="navTripBadge">0</span></button>
+                <button type="button" data-page="guides" onclick="navigateTo('guides')">Guides</button>
             </nav>
 
-            <a href="planner.html" class="nav-cta">
+            <button type="button" class="nav-cta" onclick="navigateTo('planner')">
                 Plan a Trip <span>↗</span>
-            </a>
+            </button>
 
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
                 ☰
@@ -41,232 +41,1074 @@
         </div>
 
         <div class="mobile-menu" id="mobileMenu">
-            <a href="index.html" class="active">Home</a>
-            <a href="discover.html">Discover</a>
-            <a href="destinations.html">Destinations</a>
-            <a href="planner.html">Planner</a>
-            <a href="budget.html">Budget</a>
-            <a href="trips.html">My Trips</a>
-            <a href="guides.html">Guides</a>
-            <a href="planner.html" class="nav-cta full-width">Plan a Trip ↗</a>
+            <button type="button" data-page="home" onclick="navigateTo('home')">Home</button>
+            <button type="button" data-page="discover" onclick="navigateTo('discover')">Discover</button>
+            <button type="button" data-page="destinations" onclick="navigateTo('destinations')">Destinations</button>
+            <button type="button" data-page="planner" onclick="navigateTo('planner')">Planner</button>
+            <button type="button" data-page="budget" onclick="navigateTo('budget')">Budget</button>
+            <button type="button" data-page="trips" onclick="navigateTo('trips')">My Trips</button>
+            <button type="button" data-page="guides" onclick="navigateTo('guides')">Guides</button>
+            <button type="button" class="nav-cta full-width" onclick="navigateTo('planner')">Plan a Trip ↗</button>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="eyebrow">
-                <span></span>
-                SMART TRAVEL PLANNING
-            </div>
+    <!-- SPA APP CONTAINER -->
+    <div id="app">
 
-            <h1>
-                Go somewhere<br>
-                <em>worth remembering.</em>
-            </h1>
+        <!-- =========================================================
+             1. HOME VIRTUAL PAGE (#page-home)
+        ========================================================= -->
+        <section id="page-home" class="page active">
+            <!-- CINEMATIC HERO SECTION -->
+            <div class="hero">
+                <div class="container hero-container">
+                    <div class="hero-content">
+                        <div class="hero-eyebrow">
+                            ✦ SUNSET JOURNEY ENGINE
+                        </div>
 
-            <p>
-                Discover destinations, build realistic itineraries, understand your costs and plan your next adventure without the spreadsheet headache.
-            </p>
+                        <h1>
+                            Find your next<br>
+                            <span class="highlight-gradient">unforgettable</span> escape.
+                        </h1>
 
-            <div class="hero-actions">
-                <a href="planner.html" class="primary-btn">
-                    Start planning <span>↗</span>
-                </a>
+                        <p>
+                            Discover destinations, build realistic trips and understand your budget before you go.
+                        </p>
 
-                <a href="destinations.html" class="secondary-btn">
-                    Explore destinations
-                </a>
-            </div>
+                        <div class="hero-actions">
+                            <button type="button" class="primary-btn lg" onclick="navigateTo('destinations')">
+                                EXPLORE DESTINATIONS <span>↗</span>
+                            </button>
 
-            <div class="hero-stats">
-                <div>
-                    <strong>120+</strong>
-                    <span>Destinations</span>
-                </div>
-                <div>
-                    <strong>₹</strong>
-                    <span>Budget smart</span>
-                </div>
-                <div>
-                    <strong>24/7</strong>
-                    <span>Plan anytime</span>
-                </div>
-            </div>
-        </div>
+                            <button type="button" class="secondary-btn" onclick="navigateTo('planner')">
+                                PLAN MY TRIP
+                            </button>
+                        </div>
 
-        <div class="hero-visual">
-            <div class="hero-image-card">
-                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85" alt="Swiss Alps Mountain View">
-                <div class="floating-location">
-                    <span class="location-icon">⌖</span>
-                    <div>
-                        <small>Trending destination</small>
-                        <strong>Swiss Alps</strong>
+                        <div class="hero-stats">
+                            <div class="hero-stat-item">
+                                <strong>120+</strong>
+                                <span>Destinations</span>
+                            </div>
+                            <div class="hero-stat-item">
+                                <strong>₹</strong>
+                                <span>Budget Smart</span>
+                            </div>
+                            <div class="hero-stat-item">
+                                <strong>120K+</strong>
+                                <span>Trips Planned</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FLOATING CARDS & VISUAL -->
+                    <div class="hero-visual-wrapper">
+                        <div class="hero-main-card">
+                            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85" alt="Swiss Alps Mountain View">
+                        </div>
+
+                        <!-- FLOATING CARD 1: TRENDING NOW -->
+                        <div class="floating-card card-1" onclick="planDestination('bali')">
+                            <div class="icon-badge">✦</div>
+                            <div>
+                                <small>TRENDING NOW</small>
+                                <strong>Bali, Indonesia</strong>
+                                <span>₹28,500 · 5 days</span>
+                            </div>
+                        </div>
+
+                        <!-- FLOATING CARD 2: BUDGET MATCH -->
+                        <div class="floating-card card-2">
+                            <div class="icon-badge orange">92%</div>
+                            <div>
+                                <small style="color:var(--accent-orange)">BUDGET MATCH</small>
+                                <strong>Perfect fit</strong>
+                                <span>Within expected spending</span>
+                            </div>
+                        </div>
+
+                        <!-- FLOATING CARD 3: TRAVELLERS -->
+                        <div class="floating-card card-3">
+                            <div class="icon-badge">✈</div>
+                            <div>
+                                <small>TRAVELLERS</small>
+                                <strong>120K+</strong>
+                                <span>planned trips</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="floating-note">
-                <span>✦</span>
-                <div>
-                    <strong>Best value</strong>
-                    <small>₹28,500 · 5 days</small>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: WHY WANDERLY -->
-    <section class="quick-section">
-        <div class="section-heading">
-            <div>
-                <span class="section-label">WHY WANDERLY</span>
-                <h2>
-                    Discover smarter.<br>
-                    <em>Plan better. Travel happier.</em>
-                </h2>
-            </div>
-            <p>
-                We strip away hidden costs and confusing star ratings, turning your travel dreams into achievable budget plans.
-            </p>
-        </div>
-
-        <div class="why-grid">
-            <div class="why-card">
-                <span class="why-num">01</span>
-                <h3>Discover</h3>
-                <p>Find destinations across beach, mountains, heritage, and cities tailored directly to your personal vibe.</p>
-                <a href="discover.html" class="why-link">Explore Discovery →</a>
-            </div>
-
-            <div class="why-card">
-                <span class="why-num">02</span>
-                <h3>Plan</h3>
-                <p>Build a realistic trip with stay, food, transport, and activity cost breakdowns before booking a single ticket.</p>
-                <a href="planner.html" class="why-link">Try Trip Planner →</a>
-            </div>
-
-            <div class="why-card">
-                <span class="why-num">03</span>
-                <h3>Save</h3>
-                <p>Keep your favourite customized itineraries organized in one place and revisit them whenever you are ready to travel.</p>
-                <a href="trips.html" class="why-link">View Saved Trips →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: FEATURED DESTINATIONS TEASER -->
-    <section class="destinations-section">
-        <div class="section-heading">
-            <div>
-                <span class="section-label">CURATED SELECTION</span>
-                <h2>
-                    Places worth<br>
-                    <em>the journey.</em>
-                </h2>
-            </div>
-            <a href="destinations.html" class="text-btn">View all destinations →</a>
-        </div>
-
-        <div class="destination-grid" id="homeFeaturedGrid">
-            <!-- Rendered dynamically via JS -->
-        </div>
-    </section>
-
-    <!-- SECTION: BUDGET TEASER -->
-    <section class="budget-section">
-        <div class="budget-copy">
-            <span class="section-label">BUDGET INTELLIGENCE</span>
-            <h2>
-                Know your numbers<br>
-                <em>before you go.</em>
-            </h2>
-            <p>
-                WANDERLY breaks your travel budget into the things that actually matter, so you know where your money goes before leaving home.
-            </p>
-            <div class="feature-list">
-                <div><span>01</span> <strong>Realistic daily cost modeling</strong></div>
-                <div><span>02</span> <strong>Transparent category splits</strong></div>
-                <div><span>03</span> <strong>Smart recommendations</strong></div>
-            </div>
-            <div style="margin-top: 28px;">
-                <a href="budget.html" class="primary-btn">Explore Budget Calculator ↗</a>
-            </div>
-        </div>
-
-        <div class="budget-visual">
-            <div class="mini-card">
-                <div class="mini-card-header">
-                    <span>TRIP BUDGET</span>
-                    <strong>₹42,800</strong>
-                </div>
-                <div class="budget-bars">
-                    <div class="bar-row">
-                        <span>Stay</span>
-                        <div><i style="width: 72%;"></i></div>
-                        <strong>₹15k</strong>
+            <!-- FEATURE STRIP (WHY WANDERLY) -->
+            <div class="quick-section bg-card-section">
+                <div class="container">
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-label">WHY WANDERLY?</span>
+                            <h2>
+                                Plan smarter.<br>
+                                <span class="highlight-gradient">Travel better.</span>
+                            </h2>
+                        </div>
+                        <p>
+                            We turn your travel aspirations into crystal-clear budget plans before you leave home.
+                        </p>
                     </div>
-                    <div class="bar-row">
-                        <span>Transport</span>
-                        <div><i style="width: 55%;"></i></div>
-                        <strong>₹11k</strong>
-                    </div>
-                    <div class="bar-row">
-                        <span>Food</span>
-                        <div><i style="width: 38%;"></i></div>
-                        <strong>₹8k</strong>
-                    </div>
-                    <div class="bar-row">
-                        <span>Activities</span>
-                        <div><i style="width: 30%;"></i></div>
-                        <strong>₹6k</strong>
+
+                    <div class="why-grid">
+                        <div class="why-card">
+                            <span class="why-num">01</span>
+                            <h3>DISCOVER</h3>
+                            <p>Find destinations based on your interests across nature, beaches, heritage, and vibrant global hubs.</p>
+                            <button type="button" class="why-link" onclick="navigateTo('discover')">Explore Discovery →</button>
+                        </div>
+
+                        <div class="why-card">
+                            <span class="why-num">02</span>
+                            <h3>PLAN</h3>
+                            <p>Build a trip around your actual budget with live transport, stay, dining, and activity breakdowns.</p>
+                            <button type="button" class="why-link" onclick="navigateTo('planner')">Try Trip Planner →</button>
+                        </div>
+
+                        <div class="why-card">
+                            <span class="why-num">03</span>
+                            <h3>SAVE</h3>
+                            <p>Keep your favourite journeys ready in digital postcards so you can revisit whenever inspiration strikes.</p>
+                            <button type="button" class="why-link" onclick="navigateTo('trips')">View Saved Trips →</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="floating-budget-card">
-                <span>✓</span>
-                <div>
-                    <strong>Good balance</strong>
-                    <small>₹7,200 remaining</small>
+            <!-- TRENDING DESTINATIONS GALLERY -->
+            <div class="quick-section">
+                <div class="container">
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-label">TRENDING DESTINATIONS</span>
+                            <h2>
+                                Places worth<br>
+                                <span class="highlight-cyan">the journey.</span>
+                            </h2>
+                        </div>
+                        <button type="button" class="text-btn" onclick="navigateTo('destinations')">View all destinations →</button>
+                    </div>
+
+                    <div class="destination-grid" id="homeFeaturedGrid">
+                        <!-- Rendered dynamically via JS -->
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- FINAL CTA -->
-    <section class="final-cta-banner">
-        <div class="cta-inner">
-            <span class="section-label">GET STARTED</span>
-            <h2>Your next trip starts here.</h2>
-            <p>Join thousands of smart travellers planning effortless, budget-friendly journeys.</p>
-            <a href="planner.html" class="primary-btn lg">Plan a Trip <span>→</span></a>
+            <!-- BUDGET INTELLIGENCE TEASER -->
+            <div class="quick-section bg-card-section">
+                <div class="container">
+                    <div class="budget-section">
+                        <div class="budget-copy">
+                            <span class="section-label">FINANCIAL CLARITY</span>
+                            <h2>
+                                Know your numbers<br>
+                                <span class="highlight-orange">before you go.</span>
+                            </h2>
+                            <p>
+                                WANDERLY models your travel expenses into realistic daily limits so you never encounter hidden surprises on the road.
+                            </p>
+                            
+                            <div class="budget-pillars-list">
+                                <div class="pillar-item">
+                                    <span class="pillar-num">01</span>
+                                    <div>
+                                        <h4>Realistic Daily Cost Modeling</h4>
+                                        <p>Stay, transport, food, and activities dynamically calculated for your travel style.</p>
+                                    </div>
+                                </div>
+
+                                <div class="pillar-item">
+                                    <span class="pillar-num">02</span>
+                                    <div>
+                                        <h4>Transparent Category Splits</h4>
+                                        <p>Know exactly how much goes toward stays versus unforgettable experiences.</p>
+                                    </div>
+                                </div>
+
+                                <div class="pillar-item">
+                                    <span class="pillar-num">03</span>
+                                    <div>
+                                        <h4>Smart Recommendations</h4>
+                                        <p>Get advice on emergency buffers and stay upgrades tailored to your budget size.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 32px;">
+                                <button type="button" class="primary-btn" onclick="navigateTo('budget')">Explore Budget Dashboard ↗</button>
+                            </div>
+                        </div>
+
+                        <div class="budget-visual">
+                            <div class="mini-card">
+                                <div class="mini-card-header">
+                                    <span>SAMPLE TRIP ESTIMATE</span>
+                                    <strong>₹42,800</strong>
+                                </div>
+                                <div class="budget-bars">
+                                    <div class="bar-row">
+                                        <span>Stay</span>
+                                        <div><i style="width: 70%;"></i></div>
+                                        <strong>₹15,000</strong>
+                                    </div>
+                                    <div class="bar-row">
+                                        <span>Transport</span>
+                                        <div><i style="width: 52%;"></i></div>
+                                        <strong>₹11,000</strong>
+                                    </div>
+                                    <div class="bar-row">
+                                        <span>Food</span>
+                                        <div><i style="width: 38%;"></i></div>
+                                        <strong>₹8,000</strong>
+                                    </div>
+                                    <div class="bar-row">
+                                        <span>Activities</span>
+                                        <div><i style="width: 28%;"></i></div>
+                                        <strong>₹6,000</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="floating-budget-card">
+                                <span>✓</span>
+                                <div>
+                                    <strong>Within Budget (82%)</strong>
+                                    <small>₹7,200 remaining buffer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FINAL CTA BANNER -->
+            <div class="final-cta-banner">
+                <div class="cta-inner">
+                    <span class="section-label">START YOUR JOURNEY</span>
+                    <h2>Ready to wander?</h2>
+                    <p>Join thousands of smart travellers planning effortless, budget-smart journeys.</p>
+                    <button type="button" class="primary-btn lg" onclick="navigateTo('planner')">PLAN YOUR TRIP <span>↗</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             2. DISCOVER VIRTUAL PAGE (#page-discover)
+        ========================================================= -->
+        <section id="page-discover" class="page">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-label">DISCOVERY ENGINE</span>
+                    <h1>
+                        Where will you<br>
+                        <span class="highlight-gradient">go next?</span>
+                    </h1>
+                    <p>Filter by destination, travel window, budget limit, and style to find your ideal match.</p>
+
+                    <!-- SEARCH CARD -->
+                    <div class="search-card margin-top-lg">
+                        <div class="search-field">
+                            <span class="field-icon">⌖</span>
+                            <div>
+                                <label for="discoverDest">Destination</label>
+                                <input type="text" id="discoverDest" placeholder="Where do you want to go?" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="search-field">
+                            <span class="field-icon">◷</span>
+                            <div>
+                                <label for="discoverMonth">When</label>
+                                <select id="discoverMonth">
+                                    <option value="">Anytime</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-field">
+                            <span class="field-icon">₹</span>
+                            <div>
+                                <label for="discoverBudget">Budget</label>
+                                <select id="discoverBudget">
+                                    <option value="">Any budget</option>
+                                    <option value="15000">Under ₹15,000</option>
+                                    <option value="30000">Under ₹30,000</option>
+                                    <option value="50000">Under ₹50,000</option>
+                                    <option value="100000">Under ₹1,00,000</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-field">
+                            <span class="field-icon">✦</span>
+                            <div>
+                                <label for="discoverStyle">Travel style</label>
+                                <select id="discoverStyle">
+                                    <option value="">Any style</option>
+                                    <option value="budget">Budget</option>
+                                    <option value="balanced">Balanced</option>
+                                    <option value="comfort">Comfort</option>
+                                    <option value="luxury">Luxury</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="search-btn" onclick="executeDiscoverSearch()">
+                            Discover <span>↗</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-section">
+                <div class="container">
+                    <!-- TRENDING NOW -->
+                    <div class="discover-category-block">
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-label">POPULAR CHOICE</span>
+                                <h2>Trending now</h2>
+                            </div>
+                        </div>
+                        <div class="destination-grid" id="trendingGrid">
+                            <!-- JS Populated -->
+                        </div>
+                    </div>
+
+                    <!-- HIDDEN GEMS -->
+                    <div class="discover-category-block margin-top-xl">
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-label">SECRET RETREATS</span>
+                                <h2>Hidden gems</h2>
+                            </div>
+                        </div>
+                        <div class="destination-grid" id="gemsGrid">
+                            <!-- JS Populated -->
+                        </div>
+                    </div>
+
+                    <!-- BUDGET ESCAPES -->
+                    <div class="discover-category-block margin-top-xl">
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-label">GREAT VALUE</span>
+                                <h2>Budget escapes</h2>
+                            </div>
+                        </div>
+                        <div class="destination-grid" id="budgetFriendlyGrid">
+                            <!-- JS Populated -->
+                        </div>
+                    </div>
+
+                    <!-- WEEKEND TRIPS -->
+                    <div class="discover-category-block margin-top-xl">
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-label">SEASONAL HIGHLIGHTS</span>
+                                <h2>Weekend trips</h2>
+                            </div>
+                        </div>
+                        <div class="destination-grid" id="seasonalGrid">
+                            <!-- JS Populated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3. DESTINATIONS VIRTUAL PAGE (#page-destinations)
+        ========================================================= -->
+        <section id="page-destinations" class="page">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-label">DESTINATION DIRECTORY</span>
+                    <h1>
+                        Explore <span class="highlight-cyan">the world.</span>
+                    </h1>
+                    <p>Hand-picked curated destinations across nature, heritage, beaches, and vibrant global cities.</p>
+
+                    <!-- FILTERS BAR -->
+                    <div class="filter-bar margin-top-lg">
+                        <button class="filter-pill active" onclick="filterDestinations('All', this)">ALL</button>
+                        <button class="filter-pill" onclick="filterDestinations('India', this)">INDIA</button>
+                        <button class="filter-pill" onclick="filterDestinations('Asia', this)">ASIA</button>
+                        <button class="filter-pill" onclick="filterDestinations('Europe', this)">EUROPE</button>
+                        <button class="filter-pill" onclick="filterDestinations('Middle East', this)">MIDDLE EAST</button>
+                        <button class="filter-pill" onclick="filterDestinations('Beach', this)">BEACH</button>
+                        <button class="filter-pill" onclick="filterDestinations('Mountains', this)">MOUNTAINS</button>
+                        <button class="filter-pill" onclick="filterDestinations('Culture', this)">CULTURE</button>
+                        <button class="filter-pill" onclick="filterDestinations('Adventure', this)">ADVENTURE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-section">
+                <div class="container">
+                    <div class="destination-directory-grid" id="directoryGrid">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             4. PLANNER VIRTUAL PAGE (#page-planner)
+        ========================================================= -->
+        <section id="page-planner" class="page">
+            <div class="planner-section">
+                <div class="planner-intro">
+                    <span class="section-label">SMART TRIP PLANNER</span>
+                    <h1>
+                        Build a trip<br>
+                        <span class="highlight-gradient">that fits your budget.</span>
+                    </h1>
+                    <p>
+                        Configure your trip parameters below and discover realistic cost estimates split across transport, stay, meals, and activities.
+                    </p>
+                </div>
+
+                <div class="planner-layout">
+                    <!-- LEFT CONFIGURATION WORKSPACE -->
+                    <div class="planner-card">
+                        <div class="card-header">
+                            <div>
+                                <h3>Trip Configuration</h3>
+                            </div>
+                            <span>01 / CONFIG</span>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="destination">Destination</label>
+                            <div class="select-wrapper">
+                                <select id="destination">
+                                    <option value="any">✨ Let WANDERLY find the best match</option>
+                                    <option value="goa">Goa, India</option>
+                                    <option value="munnar">Munnar, India</option>
+                                    <option value="jaipur">Jaipur, India</option>
+                                    <option value="bali">Bali, Indonesia</option>
+                                    <option value="dubai">Dubai, UAE</option>
+                                    <option value="kyoto">Kyoto, Japan</option>
+                                    <option value="maldives">Maldives</option>
+                                    <option value="switzerland">Swiss Alps, Switzerland</option>
+                                    <option value="singapore">Singapore</option>
+                                    <option value="thailand">Bangkok, Thailand</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Travellers</label>
+                                <div class="stepper">
+                                    <button type="button" onclick="changeValue('travellers', -1)">−</button>
+                                    <input id="travellers" value="2" readonly>
+                                    <button type="button" onclick="changeValue('travellers', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Days</label>
+                                <div class="stepper">
+                                    <button type="button" onclick="changeValue('days', -1)">−</button>
+                                    <input id="days" value="3" readonly>
+                                    <button type="button" onclick="changeValue('days', 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="budget">Total budget</label>
+                                <div class="money-input">
+                                    <span>₹</span>
+                                    <input type="number" id="budget" placeholder="50000" value="40000" min="1000" step="1000">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="travelStyle">Travel style</label>
+                                <select id="travelStyle">
+                                    <option value="budget">Budget (0.78x)</option>
+                                    <option value="balanced" selected>Balanced (1.0x)</option>
+                                    <option value="comfort">Comfort (1.3x)</option>
+                                    <option value="luxury">Luxury (1.8x)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group full">
+                            <label>Interests &amp; Priorities</label>
+                            <div class="interest-grid">
+                                <button type="button" class="interest active" data-interest="food" onclick="toggleInterest(this)">
+                                    🍜 Food &amp; Dining
+                                </button>
+                                <button type="button" class="interest" data-interest="nature" onclick="toggleInterest(this)">
+                                    🌿 Nature &amp; Views
+                                </button>
+                                <button type="button" class="interest" data-interest="culture" onclick="toggleInterest(this)">
+                                    🏛 Culture &amp; Heritage
+                                </button>
+                                <button type="button" class="interest" data-interest="adventure" onclick="toggleInterest(this)">
+                                    🏄 Outdoor Adventure
+                                </button>
+                            </div>
+                        </div>
+
+                        <button type="button" class="calculate-btn" onclick="calculateTrip()">
+                            Calculate my trip <span>→</span>
+                        </button>
+                    </div>
+
+                    <!-- RIGHT LIVE TRIP ESTIMATE WORKSPACE -->
+                    <div class="result-card" id="resultCard">
+                        <div class="result-empty" id="emptyState">
+                            <div class="empty-icon">✦</div>
+                            <h3>Your journey starts here.</h3>
+                            <p>Select your trip details and click Calculate to view a live estimate.</p>
+                        </div>
+
+                        <div class="result-content hidden" id="resultContent">
+                            <div class="result-top">
+                                <div>
+                                    <span class="section-label" style="margin-bottom:4px;">LIVE TRIP ESTIMATE</span>
+                                    <h3 id="resultDestination">Goa, India</h3>
+                                </div>
+                                <div class="budget-status within" id="budgetStatus">✓ Within budget</div>
+                            </div>
+
+                            <div class="total-box">
+                                <span>Estimated total</span>
+                                <strong id="totalCost">₹0</strong>
+                                <small id="perPerson">₹0 per person</small>
+                            </div>
+
+                            <div class="breakdown">
+                                <div class="breakdown-item">
+                                    <div>
+                                        <span style="color:var(--accent-cyan);">✈</span>
+                                        <span>TRANSPORT</span>
+                                    </div>
+                                    <strong id="transportCost">₹0</strong>
+                                </div>
+
+                                <div class="breakdown-item">
+                                    <div>
+                                        <span style="color:var(--accent-orange);">⌂</span>
+                                        <span>STAY</span>
+                                    </div>
+                                    <strong id="stayCost">₹0</strong>
+                                </div>
+
+                                <div class="breakdown-item">
+                                    <div>
+                                        <span style="color:var(--accent-cyan);">🍜</span>
+                                        <span>FOOD</span>
+                                    </div>
+                                    <strong id="foodCost">₹0</strong>
+                                </div>
+
+                                <div class="breakdown-item">
+                                    <div>
+                                        <span style="color:var(--accent-orange);">✦</span>
+                                        <span>ACTIVITIES</span>
+                                    </div>
+                                    <strong id="activityCost">₹0</strong>
+                                </div>
+                            </div>
+
+                            <div class="budget-progress">
+                                <div class="progress-header">
+                                    <span>BUDGET USAGE</span>
+                                    <strong id="budgetPercentage">0%</strong>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                            </div>
+
+                            <div class="recommendation">
+                                <span>✦</span>
+                                <div>
+                                    <strong>RECOMMENDATION</strong>
+                                    <p id="recommendationText">Your budget leaves enough room for experiences and unexpected expenses.</p>
+                                </div>
+                            </div>
+
+                            <button type="button" class="save-trip-btn" onclick="saveTrip()">
+                                Save this trip ♡
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             5. BUDGET VIRTUAL PAGE (#page-budget)
+        ========================================================= -->
+        <section id="page-budget" class="page">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-label">FINANCIAL DASHBOARD</span>
+                    <h1>
+                        Know your numbers<br>
+                        <span class="highlight-gradient">before you go.</span>
+                    </h1>
+                    <p>Understand where every rupee goes. WANDERLY splits your travel budget into transparent, realistic spending buckets.</p>
+                </div>
+            </div>
+
+            <div class="quick-section">
+                <div class="container">
+                    <div class="budget-section">
+                        <div class="budget-copy">
+                            <span class="section-label">OUR METHODOLOGY</span>
+                            <h2>The 5 Pillars of Travel Cost</h2>
+                            <p>We analyze historical pricing across flights, trains, boutique stays, local markets, and experience tickets to build accurate estimates.</p>
+                            
+                            <div class="budget-pillars-list">
+                                <div class="pillar-item">
+                                    <span class="pillar-num">01</span>
+                                    <div>
+                                        <h4>Transport</h4>
+                                        <p>Long-distance travel (flight/rail/road) + estimated local cabs or scooter rentals.</p>
+                                    </div>
+                                </div>
+
+                                <div class="pillar-item">
+                                    <span class="pillar-num">02</span>
+                                    <div>
+                                        <h4>Stay / Accommodation</h4>
+                                        <p>Daily room rates calculated for your chosen travel style (Budget, Balanced, Comfort, Luxury).</p>
+                                    </div>
+                                </div>
+
+                                <div class="pillar-item">
+                                    <span class="pillar-num">03</span>
+                                    <div>
+                                        <h4>Food &amp; Dining</h4>
+                                        <p>3 daily meals plus snacks, bottled water, and regional culinary experiences.</p>
+                                    </div>
+                                </div>
+
+                                <div class="pillar-item">
+                                    <span class="pillar-num">04</span>
+                                    <div>
+                                        <h4>Activities &amp; Tours</h4>
+                                        <p>Monument entry passes, national park permits, guided tours, and water sports.</p>
+                                    </div>
+                                </div>
+
+                                <div class="pillar-item">
+                                    <span class="pillar-num">05</span>
+                                    <div>
+                                        <h4>Emergency Buffer</h4>
+                                        <p>A recommended safety margin for unexpected surge fees, local transit or shopping.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FINANCIAL DASHBOARD CARD -->
+                        <div class="budget-visual">
+                            <div class="mini-card">
+                                <div class="mini-card-header">
+                                    <span>ESTIMATED TRIP COST</span>
+                                    <strong>₹42,800</strong>
+                                </div>
+
+                                <div class="budget-bars">
+                                    <div class="bar-row">
+                                        <span>Stay</span>
+                                        <div><i style="width: 70%;"></i></div>
+                                        <strong>₹15,000</strong>
+                                    </div>
+
+                                    <div class="bar-row">
+                                        <span>Transport</span>
+                                        <div><i style="width: 52%;"></i></div>
+                                        <strong>₹11,000</strong>
+                                    </div>
+
+                                    <div class="bar-row">
+                                        <span>Food</span>
+                                        <div><i style="width: 38%;"></i></div>
+                                        <strong>₹8,000</strong>
+                                    </div>
+
+                                    <div class="bar-row">
+                                        <span>Activities</span>
+                                        <div><i style="width: 28%;"></i></div>
+                                        <strong>₹6,000</strong>
+                                    </div>
+
+                                    <div class="bar-row">
+                                        <span>Emergency</span>
+                                        <div><i style="width: 14%;"></i></div>
+                                        <strong>₹2,800</strong>
+                                    </div>
+                                </div>
+
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:24px; padding-top:20px; border-top:1px solid var(--border-subtle);">
+                                    <div style="background:var(--bg-dark); padding:12px; border-radius:8px; text-align:center;">
+                                        <small style="color:var(--text-muted); font-size:10px; text-transform:uppercase; letter-spacing:1px; font-family:var(--font-heading); display:block;">Daily Budget</small>
+                                        <strong style="color:var(--accent-cyan); font-family:var(--font-heading); font-size:18px;">₹8,560</strong>
+                                    </div>
+                                    <div style="background:var(--bg-dark); padding:12px; border-radius:8px; text-align:center;">
+                                        <small style="color:var(--text-muted); font-size:10px; text-transform:uppercase; letter-spacing:1px; font-family:var(--font-heading); display:block;">Per Person</small>
+                                        <strong style="color:var(--accent-orange); font-family:var(--font-heading); font-size:18px;">₹21,400</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="floating-budget-card">
+                                <span>✓</span>
+                                <div>
+                                    <strong>Budget Remaining</strong>
+                                    <small>₹7,200 buffer ready</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE BUDGET CALCULATOR WIDGET -->
+            <div class="quick-section bg-card-section">
+                <div class="container">
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-label">INTERACTIVE TOOL</span>
+                            <h2>Quick Budget Allocation Calculator</h2>
+                        </div>
+                        <p>Enter your total target budget, travel days, and group size to calculate ideal category allocations instantly.</p>
+                    </div>
+
+                    <div class="budget-calc-widget">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="widgetBudget">Target Trip Budget (₹)</label>
+                                <div class="money-input">
+                                    <span>₹</span>
+                                    <input type="number" id="widgetBudget" value="50000" min="1000" step="1000">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="widgetDays">Days</label>
+                                <input type="number" id="widgetDays" class="styled-input" value="4" min="1" max="30">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="widgetTravellers">Travellers</label>
+                                <input type="number" id="widgetTravellers" class="styled-input" value="2" min="1" max="20">
+                            </div>
+                        </div>
+
+                        <div class="widget-results margin-top-lg">
+                            <div class="widget-metric">
+                                <small>Daily Budget Limit</small>
+                                <strong id="widgetDailyLimit">₹12,500 / day</strong>
+                            </div>
+
+                            <div class="widget-metric">
+                                <small>Per-Person Budget Limit</small>
+                                <strong id="widgetPerPersonLimit">₹25,000 / person</strong>
+                            </div>
+                        </div>
+
+                        <div class="widget-allocation-grid margin-top-lg">
+                            <div class="allocation-card">
+                                <span>Stay (35%)</span>
+                                <strong id="allocStay">₹17,500</strong>
+                            </div>
+                            <div class="allocation-card">
+                                <span>Transport (25%)</span>
+                                <strong id="allocTransport">₹12,500</strong>
+                            </div>
+                            <div class="allocation-card">
+                                <span>Food (20%)</span>
+                                <strong id="allocFood">₹10,000</strong>
+                            </div>
+                            <div class="allocation-card">
+                                <span>Activities (12%)</span>
+                                <strong id="allocActivities">₹6,000</strong>
+                            </div>
+                            <div class="allocation-card">
+                                <span>Buffer (8%)</span>
+                                <strong id="allocBuffer">₹4,000</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             6. MY TRIPS VIRTUAL PAGE (#page-trips)
+        ========================================================= -->
+        <section id="page-trips" class="page">
+            <div class="page-hero">
+                <div class="container">
+                    <div class="flex-between flex-wrap gap-md">
+                        <div>
+                            <span class="section-label">YOUR JOURNEYS</span>
+                            <h1>
+                                Your <span class="highlight-gradient">journeys.</span>
+                            </h1>
+                            <p>Revisit your custom digital travel postcards and budget plans saved from WANDERLY.</p>
+                        </div>
+
+                        <div style="align-self: flex-end;">
+                            <span class="trip-count" id="tripCount">0 trips</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-section">
+                <div class="container">
+                    <div class="saved-trips" id="savedTrips">
+                        <!-- Rendered dynamically via script.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             7. GUIDES VIRTUAL PAGE (#page-guides)
+        ========================================================= -->
+        <section id="page-guides" class="page">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-label">EDITORIAL GUIDES</span>
+                    <h1>
+                        Travel smarter.<br>
+                        <span class="highlight-gradient">Go further.</span>
+                    </h1>
+                    <p>Practical advice on budgeting, destination picking, hidden culinary gems, and stress-free packing.</p>
+
+                    <!-- CATEGORY FILTER PILLS -->
+                    <div class="filter-bar margin-top-lg">
+                        <button class="filter-pill active" onclick="filterGuides('All', this)">All Guides</button>
+                        <button class="filter-pill" onclick="filterGuides('Budget Travel', this)">Budget Travel</button>
+                        <button class="filter-pill" onclick="filterGuides('Weekend Trips', this)">Weekend Trips</button>
+                        <button class="filter-pill" onclick="filterGuides('Food', this)">Food &amp; Dining</button>
+                        <button class="filter-pill" onclick="filterGuides('Adventure', this)">Adventure</button>
+                        <button class="filter-pill" onclick="filterGuides('Nature', this)">Nature</button>
+                        <button class="filter-pill" onclick="filterGuides('International', this)">International</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-section">
+                <div class="container">
+                    <div class="guides-grid" id="guidesGrid">
+                        <article class="guide-card" data-category="International" onclick="openGuideModal('international')">
+                            <span class="guide-badge">FIRST TIMER</span>
+                            <h3>How to Plan Your First International Trip Without Overthinking</h3>
+                            <p>Currencies, SIM cards, flight windows, and insurance decoded without financial stress.</p>
+                            <span class="guide-link">Read guide →</span>
+                        </article>
+
+                        <article class="guide-card" data-category="Weekend Trips" onclick="openGuideModal('weekend')">
+                            <span class="guide-badge">WEEKEND TRIPS</span>
+                            <h3>7 Budget-Friendly Weekend Escapes That Feel Premium</h3>
+                            <p>How to sequence itineraries for short 72-hour trips without feeling exhausted or rushed.</p>
+                            <span class="guide-link">Read guide →</span>
+                        </article>
+
+                        <article class="guide-card" data-category="Budget Travel" onclick="openGuideModal('budget25k')">
+                            <span class="guide-badge">BUDGET TRAVEL</span>
+                            <h3>How to Build a High-Impact ₹25,000 Vacation</h3>
+                            <p>A step-by-step blueprint to balance boutique stay comfort with incredible regional experiences.</p>
+                            <span class="guide-link">Read guide →</span>
+                        </article>
+
+                        <article class="guide-card" data-category="Food" onclick="openGuideModal('food')">
+                            <span class="guide-badge">FOOD &amp; DINING</span>
+                            <h3>Best Destinations &amp; Hacks for Culinary Lovers</h3>
+                            <p>Finding Michelin-recommended hawkers, local night markets, and back-alley food gems.</p>
+                            <span class="guide-link">Read guide →</span>
+                        </article>
+
+                        <article class="guide-card" data-category="Nature" onclick="openGuideModal('nature')">
+                            <span class="guide-badge">NATURE</span>
+                            <h3>How to Travel Without Overplanning Every Hour</h3>
+                            <p>Leave room for serendipity, quiet tea walks, and spontaneous local conversations.</p>
+                            <span class="guide-link">Read guide →</span>
+                        </article>
+
+                        <article class="guide-card" data-category="Budget Travel" onclick="openGuideModal('hacks')">
+                            <span class="guide-badge">SMART HACKS</span>
+                            <h3>Off-Peak Travel Secrets: 50% Off Luxury Stays</h3>
+                            <p>Master shoulder-season booking windows to unlock five-star resorts at three-star prices.</p>
+                            <span class="guide-link">Read guide →</span>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             8. ABOUT VIRTUAL PAGE (#page-about)
+        ========================================================= -->
+        <section id="page-about" class="page">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-label">OUR MISSION</span>
+                    <h1>
+                        Travel planning<br>
+                        <span class="highlight-gradient">should feel exciting.</span>
+                    </h1>
+                    <p>Travel should be about anticipation, not spreadsheets. WANDERLY brings financial clarity, transparent costs, and effortless inspiration to curious travellers everywhere.</p>
+                </div>
+            </div>
+
+            <div class="quick-section">
+                <div class="container">
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-label">OUR IDEA</span>
+                            <h2>Plan Less. Wander More.</h2>
+                        </div>
+                        <p>
+                            Most travel tools overwhelm you with static spreadsheets, sponsored hotel listings, or hidden fees. We built WANDERLY to reveal the true cost of travel before you book.
+                        </p>
+                    </div>
+
+                    <div class="why-grid">
+                        <div class="why-card">
+                            <span class="why-num">🎯</span>
+                            <h3>Smart Cost Modeling</h3>
+                            <p>No more blind guessing. We calculate accommodation, regional transport, dining, and experience fees into clear, actionable estimates.</p>
+                        </div>
+
+                        <div class="why-card">
+                            <span class="why-num">💡</span>
+                            <h3>Budget Alignment</h3>
+                            <p>Discover destination recommendations that fit your exact wallet size — not inflated package deals or arbitrary star ratings.</p>
+                        </div>
+
+                        <div class="why-card">
+                            <span class="why-num">✨</span>
+                            <h3>Pure Discovery</h3>
+                            <p>Explore world-famous spots and serene hidden gems filtered by your personal travel style and interests.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-section bg-card-section">
+                <div class="container">
+                    <div class="section-heading text-center">
+                        <span class="section-label">HOW IT WORKS</span>
+                        <h2>Four Simple Steps to Wander</h2>
+                    </div>
+
+                    <div class="steps-grid margin-top-lg">
+                        <div class="step-card">
+                            <span class="step-num">01</span>
+                            <h3>Discover</h3>
+                            <p>Search by city, country, or let our algorithm suggest destinations based on your travel style and budget limit.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <span class="step-num">02</span>
+                            <h3>Plan</h3>
+                            <p>Configure group size, days, and total funds to calculate exact daily allowances and category splits.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <span class="step-num">03</span>
+                            <h3>Budget</h3>
+                            <p>Review transparent breakdowns for stay, transport, meals, and activities instantly in a real-time workspace.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <span class="step-num">04</span>
+                            <h3>Wander</h3>
+                            <p>Save your customized itineraries into digital postcards to revisit anytime you're ready to pack your bags.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-cta-banner">
+                <div class="cta-inner">
+                    <span class="section-label">READY TO WANDER?</span>
+                    <h2>Your next adventure starts here.</h2>
+                    <p>Build your first budget-smart travel plan in less than two minutes.</p>
+                    <button type="button" class="primary-btn lg" onclick="navigateTo('planner')">PLAN YOUR TRIP <span>↗</span></button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- DESTINATION DETAIL MODAL -->
+    <div class="modal-backdrop" id="destModalBackdrop" onclick="closeDestModal()">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeDestModal()" aria-label="Close modal">✕</button>
+            <div id="destModalBody"></div>
         </div>
-    </section>
+    </div>
+
+    <!-- GUIDE MODAL -->
+    <div class="modal-backdrop" id="guideModalBackdrop" onclick="closeGuideModal()">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeGuideModal()" aria-label="Close modal">✕</button>
+            <div id="guideModalBody"></div>
+        </div>
+    </div>
+
+    <!-- TOAST ALERT -->
+    <div class="toast" id="toast"></div>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-top">
             <div class="footer-brand">
-                <a href="index.html" class="brand">
+                <button type="button" class="brand" onclick="navigateTo('home')">
                     WANDERLY<span>.</span>
-                </a>
+                </button>
                 <p class="tagline">Plan less. Wander more.</p>
             </div>
 
             <div class="footer-col">
                 <h4>Explore</h4>
-                <a href="discover.html">Discover</a>
-                <a href="destinations.html">Destinations</a>
-                <a href="planner.html">Trip Planner</a>
-                <a href="budget.html">Budget</a>
+                <button type="button" onclick="navigateTo('discover')">Discover</button>
+                <button type="button" onclick="navigateTo('destinations')">Destinations</button>
+                <button type="button" onclick="navigateTo('planner')">Trip Planner</button>
+                <button type="button" onclick="navigateTo('budget')">Budget</button>
             </div>
 
             <div class="footer-col">
                 <h4>WANDERLY</h4>
-                <a href="about.html">About</a>
-                <a href="guides.html">Guides</a>
+                <button type="button" onclick="navigateTo('about')">About</button>
+                <button type="button" onclick="navigateTo('guides')">Guides</button>
                 <a href="mailto:hello@wanderly.com">Contact</a>
             </div>
 
